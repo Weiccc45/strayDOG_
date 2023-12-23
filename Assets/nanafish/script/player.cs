@@ -9,27 +9,39 @@ public class player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        myRigidbody = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey("w"))
+        Flip();
+        Run();
+    }
+
+    void Flip()
+    {
+        bool playerHasXAxisSpeed = Mathf.Abs(myRigidbody.velocity.x) > Mathf.Epsilon;
+        if (playerHasXAxisSpeed)
         {
-            transform.Translate(Vector3.up * Time.deltaTime);
-        }
-        if (Input.GetKey("s"))
-        {
-            transform.Translate(Vector3.down * Time.deltaTime);
-        }
-        if (Input.GetKey("a"))
-        {
-            transform.Translate(Vector3.left * Time.deltaTime);
-        }
-        if (Input.GetKey("d"))
-        {
-            transform.Translate(Vector3.right * Time.deltaTime);
+            if(myRigidbody.velocity.x > 0.1f)
+            {
+                transform.localRotation = Quaternion.Euler(0, 0, 0);
+            }
+            
+            if (myRigidbody.velocity.x < -0.1f)
+            {
+                transform.localRotation = Quaternion.Euler(0, 180, 0);
+            }
         }
     }
+
+    void Run()
+    {
+        float moveDir = Input.GetAxis("Horizontal");
+        Vector2 playerVel = new Vector2(moveDir * runspeed, myRigidbody.velocity.y);
+        myRigidbody.velocity = playerVel;
+        bool playerHasXAxisSpeed = Mathf.Abs(myRigidbody.velocity.x) > Mathf.Epsilon;
+    }
+    
 }
