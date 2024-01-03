@@ -15,4 +15,16 @@ public class Menu : MonoBehaviour
     {
         
     }
+
+    public void ToGame()
+    {
+        //¤Á´«³õ´º
+        Application.LoadLevel("Game");
+    }
+
+    public void Quit()
+    {
+        //Ãö³¬¹CÀ¸
+        Application.Quit();
+    }
 }
