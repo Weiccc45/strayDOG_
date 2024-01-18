@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/SampleScene.unity
+- path: "C:/Users/\u90C1\u96EF/Documents/GitHub/strayDOG_/Assets/nanafish/UI 1216.unity"
   isLoaded: 1
   isActive: 1
   isSubScene: 0
