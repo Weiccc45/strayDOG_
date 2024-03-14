@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/nanafish/UI 1216.unity
+    guid: 75d5bd25504fd6d4c93ac44e23e3d482
   m_configObjects: {}
