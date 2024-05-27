@@ -3,12 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - New tag
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - 03
   - Water
   - UI
   - 
@@ -40,4 +41,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: New Layer
+    uniqueID: 4291052807
+    locked: 0
+  - name: 02
+    uniqueID: 3460890967
     locked: 0
