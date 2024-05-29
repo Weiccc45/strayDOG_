@@ -1,22 +1,19 @@
 fileFormatVersion: 2
-guid: 44c9bd303be2100489695005a0a2d421
+guid: ca05e7f31682eb341875f4499fc7cdfe
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8296385383580801948
-    second: walk_0
+      213: -5561396116303860218
+    second: "\u8D70\u8DEF_0"
   - first:
-      213: 3218353051568008401
-    second: walk_1
+      213: -6286965530839981514
+    second: "\u8D70\u8DEF_1"
   - first:
-      213: 6971375644381031630
-    second: walk_2
+      213: 3907280612641855807
+    second: "\u8D70\u8DEF_2"
   - first:
-      213: -3714987382563562326
-    second: walk_3
-  - first:
-      213: -2044624726750869082
-    second: walk_4
+      213: -5525497725795009476
+    second: "\u8D70\u8DEF_3"
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -106,85 +103,85 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: walk_0
+      name: "\u8D70\u8DEF_0"
       rect:
         serializedVersion: 2
-        x: 50
-        y: 86
-        width: 444
-        height: 388
+        x: 55
+        y: 109
+        width: 600
+        height: 600
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4646ce323715ddc80800000000000000
-      internalID: -8296385383580801948
+      spriteID: 60ea870a2b3f1d2b0800000000000000
+      internalID: -5561396116303860218
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: walk_1
+      name: "\u8D70\u8DEF_1"
       rect:
         serializedVersion: 2
-        x: 609
-        y: 89
-        width: 428
-        height: 390
+        x: 765
+        y: 109
+        width: 600
+        height: 600
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1dc61808c03e9ac20800000000000000
-      internalID: 3218353051568008401
+      spriteID: 6326823d82630c8a0800000000000000
+      internalID: -6286965530839981514
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: walk_2
+      name: "\u8D70\u8DEF_2"
       rect:
         serializedVersion: 2
-        x: 1142
-        y: 87
-        width: 439
-        height: 380
+        x: 1455
+        y: 109
+        width: 600
+        height: 600
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ecc242f663d4fb060800000000000000
-      internalID: 6971375644381031630
+      spriteID: f39d94af303793630800000000000000
+      internalID: 3907280612641855807
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: walk_3
+      name: "\u8D70\u8DEF_3"
       rect:
         serializedVersion: 2
-        x: 1709
-        y: 89
-        width: 425
-        height: 390
+        x: 2162
+        y: 109
+        width: 600
+        height: 600
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aac9d3d88a6b17cc0800000000000000
-      internalID: -3714987382563562326
+      spriteID: c3c72cef71d7153b0800000000000000
+      internalID: -5525497725795009476
       vertices: []
       indices: 
       edges: []

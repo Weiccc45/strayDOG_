@@ -1,22 +1,25 @@
 fileFormatVersion: 2
-guid: 56a1a394c1c2a984f8c3fb2ae6e35cea
+guid: 7cb594deca04ab14791bc4cb91791fe9
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -740823012662544687
-    second: f front gress_0
+      213: -2809281921656572134
+    second: playerJump_0
   - first:
-      213: -4984501713210098726
-    second: f front gress_1
+      213: 1228242934994725426
+    second: playerJump_1
   - first:
-      213: -1274602016605952725
-    second: f front gress_2
+      213: -2204812269982115304
+    second: playerJump_2
   - first:
-      213: -2909600654141421847
-    second: f front gress_3
+      213: -3668069869900717043
+    second: playerJump_3
   - first:
-      213: 3650572306016987078
-    second: f front gress_4
+      213: 9024158651207401524
+    second: playerJump_4
+  - first:
+      213: 2213388662412526068
+    second: playerJump_5
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -56,7 +59,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -106,13 +109,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: f front gress_0
+      name: playerJump_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 519
-        height: 464
+        x: 39
+        y: 109
+        width: 600
+        height: 600
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -120,20 +123,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1d670d0256118b5f0800000000000000
-      internalID: -740823012662544687
+      spriteID: a17bbb9f9fc6309d0800000000000000
+      internalID: -2809281921656572134
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: f front gress_1
+      name: playerJump_1
       rect:
         serializedVersion: 2
-        x: 1275
-        y: 0
-        width: 412
-        height: 417
+        x: 760
+        y: 109
+        width: 600
+        height: 600
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,20 +144,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: adb39c1d91e73dab0800000000000000
-      internalID: -4984501713210098726
+      spriteID: 23a6e3e11789b0110800000000000000
+      internalID: 1228242934994725426
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: f front gress_2
+      name: playerJump_2
       rect:
         serializedVersion: 2
-        x: 2048
-        y: 0
-        width: 1796
-        height: 605
+        x: 1463
+        y: 109
+        width: 600
+        height: 600
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -162,20 +165,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b25a4321834bf4ee0800000000000000
-      internalID: -1274602016605952725
+      spriteID: 81a1b4b0ceee661e0800000000000000
+      internalID: -2204812269982115304
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: f front gress_3
+      name: playerJump_3
       rect:
         serializedVersion: 2
-        x: 4257
-        y: 0
-        width: 858
-        height: 453
+        x: 2170
+        y: 109
+        width: 600
+        height: 600
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -183,20 +186,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9e608abee950f97d0800000000000000
-      internalID: -2909600654141421847
+      spriteID: d04214933e5681dc0800000000000000
+      internalID: -3668069869900717043
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: f front gress_4
+      name: playerJump_4
       rect:
         serializedVersion: 2
-        x: 5246
-        y: 0
-        width: 754
-        height: 493
+        x: 2872
+        y: 104
+        width: 600
+        height: 600
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -204,8 +207,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6c76507bb2079a230800000000000000
-      internalID: 3650572306016987078
+      spriteID: 4304cf13b704c3d70800000000000000
+      internalID: 9024158651207401524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playerJump_5
+      rect:
+        serializedVersion: 2
+        x: 3593
+        y: 109
+        width: 600
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f1c9fce24987be10800000000000000
+      internalID: 2213388662412526068
       vertices: []
       indices: 
       edges: []
