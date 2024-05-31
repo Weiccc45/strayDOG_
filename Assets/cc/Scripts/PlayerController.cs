@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
     public float attackRange = 1f; // 攻击范围
     public LayerMask enemyLayer; // 敌人的Layer
     private Animator animator; // 动画控制器
-
+    
     // Start is called before the first frame update
     void Start()
     {
