@@ -17,7 +17,8 @@ public class walkctrl : MonoBehaviour
     private bool facingRight = true; 
     private bool isGrounded;
     private bool hasJumped = false;
-    private bool isRunning = false; 
+    private bool isRunning = false;
+    private bool isAttacking = false; 
     private Animator animator; 
     private Rigidbody2D rb;
     public LayerMask whatIsGround; 
@@ -28,57 +29,64 @@ public class walkctrl : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
+
     }
 
     void Update()
     {
         
         float moveX = 0f;
-    isWalking = false; 
+        isWalking = false; 
 
-    if (Input.GetKey(KeyCode.A))
-    {
-        moveX = -speed * Time.deltaTime;
-        isWalking = true;
-        if (facingRight)
+        if (Input.GetKey(KeyCode.A))
         {
-            Flip();
+            moveX = -speed * Time.deltaTime;
+            isWalking = true;
+            if (facingRight)
+            {
+                Flip();
+            }
         }
-    }
 
-    if (Input.GetKey(KeyCode.D))
-    {
-        moveX = speed * Time.deltaTime;
-        isWalking = true;
-        if (!facingRight)
+        if (Input.GetKey(KeyCode.D))
         {
-            Flip();
+            moveX = speed * Time.deltaTime;
+            isWalking = true;
+            if (!facingRight)
+            {
+                Flip();
+            }
         }
-    }
 
-    if (Input.GetKeyDown(KeyCode.Space) && isGrounded && !hasJumped) 
-    {
-        Debug.Log("Jumping!");
-        rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
-        isGrounded = false;
-        animator.SetBool("IsJumping", true); 
-        hasJumped = true; 
-    }
+        if (Input.GetKeyDown(KeyCode.Space) && isGrounded && !hasJumped) 
+        {
+            Debug.Log("Jumping!");
+            rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
+            isGrounded = false;
+            animator.SetBool("IsJumping", true); 
+            hasJumped = true; 
+        }
 
-    if (Input.GetKeyDown(KeyCode.LeftShift))
-    {
-        isRunning = true;
-    }
-    else if (Input.GetKeyUp(KeyCode.LeftShift))
-    {
-        isRunning = false;
-    }
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            isRunning = true;
+        }
+        else if (Input.GetKeyUp(KeyCode.LeftShift))
+        {
+            isRunning = false;
+        }
 
-    transform.Translate(Vector3.right * moveX);
-    float verticalInput = Input.GetAxis("Vertical");
-    transform.Translate(Vector3.up * verticalInput * (isRunning ? runSpeed : speed) * Time.deltaTime);
+        transform.Translate(Vector3.right * moveX);
+        float verticalInput = Input.GetAxis("Vertical");
+        transform.Translate(Vector3.up * verticalInput * (isRunning ? runSpeed : speed) * Time.deltaTime);
 
-    animator.SetBool("isWalking", isWalking);
+        animator.SetBool("isWalking", isWalking);
+
+        if (Input.GetMouseButtonDown(0) && !isAttacking) // 按下左键进行攻击
+        {
+            isAttacking = true;
+            animator.SetTrigger("Attack");
+        }
     }
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -130,5 +138,9 @@ public class walkctrl : MonoBehaviour
         }
     }
 
+    public void ResetAttack()
+    {
+        isAttacking = false;
+    }
     
 }

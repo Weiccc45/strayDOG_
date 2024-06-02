@@ -871,16 +871,28 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8767900886721764498, guid: bca474c3fe4d945c3a0cc9c03b1f813b, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.395
+      objectReference: {fileID: 0}
+    - target: {fileID: 8767900886721764498, guid: bca474c3fe4d945c3a0cc9c03b1f813b, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.395
+      objectReference: {fileID: 0}
+    - target: {fileID: 8767900886721764498, guid: bca474c3fe4d945c3a0cc9c03b1f813b, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.395
+      objectReference: {fileID: 0}
+    - target: {fileID: 8767900886721764498, guid: bca474c3fe4d945c3a0cc9c03b1f813b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -168.03038
+      value: -249.81
       objectReference: {fileID: 0}
     - target: {fileID: 8767900886721764498, guid: bca474c3fe4d945c3a0cc9c03b1f813b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -177.608
+      value: -249.35
       objectReference: {fileID: 0}
     - target: {fileID: 8767900886721764498, guid: bca474c3fe4d945c3a0cc9c03b1f813b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -19.108248
+      value: -26.656
       objectReference: {fileID: 0}
     - target: {fileID: 8767900886721764498, guid: bca474c3fe4d945c3a0cc9c03b1f813b, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2463,7 +2475,6 @@ GameObject:
   - component: {fileID: 1576861316}
   - component: {fileID: 1576861315}
   - component: {fileID: 1576861314}
-  - component: {fileID: 1576861317}
   m_Layer: 0
   m_Name: playerIdle_0
   m_TagString: Untagged
@@ -2626,22 +2637,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   groundCheck: {fileID: 384130882}
---- !u!114 &1576861317
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1576861310}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8321463af3aec7b47af2779a5269e68f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attackRange: 1
-  enemyLayer:
-    serializedVersion: 2
-    m_Bits: 0
 --- !u!1 &1582984411
 GameObject:
   m_ObjectHideFlags: 0
