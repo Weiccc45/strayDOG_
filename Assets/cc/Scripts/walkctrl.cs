@@ -36,11 +36,11 @@ public class walkctrl : MonoBehaviour
     {
         
         float moveX = 0f;
-        isWalking = false; 
+        isWalking = false;
 
         if (Input.GetKey(KeyCode.A))
         {
-            moveX = -speed * Time.deltaTime;
+            moveX = -1f;
             isWalking = true;
             if (facingRight)
             {
@@ -50,21 +50,12 @@ public class walkctrl : MonoBehaviour
 
         if (Input.GetKey(KeyCode.D))
         {
-            moveX = speed * Time.deltaTime;
+            moveX = 1f;
             isWalking = true;
             if (!facingRight)
             {
                 Flip();
             }
-        }
-
-        if (Input.GetKeyDown(KeyCode.Space) && isGrounded && !hasJumped) 
-        {
-            Debug.Log("Jumping!");
-            rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
-            isGrounded = false;
-            animator.SetBool("IsJumping", true); 
-            hasJumped = true; 
         }
 
         if (Input.GetKeyDown(KeyCode.LeftShift))
@@ -76,14 +67,24 @@ public class walkctrl : MonoBehaviour
             isRunning = false;
         }
 
-        transform.Translate(Vector3.right * moveX);
-        float verticalInput = Input.GetAxis("Vertical");
-        transform.Translate(Vector3.up * verticalInput * (isRunning ? runSpeed : speed) * Time.deltaTime);
+        float currentSpeed = isRunning ? runSpeed : speed;
+        transform.Translate(Vector3.right * moveX * currentSpeed * Time.deltaTime);
+
+        if (Input.GetKeyDown(KeyCode.Space) && isGrounded && !hasJumped)
+        {
+            Debug.Log("Jumping!");
+            rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
+            isGrounded = false;
+            animator.SetBool("IsJumping", true);
+            hasJumped = true;
+        }
 
         animator.SetBool("isWalking", isWalking);
+        animator.SetBool("isRunning", isRunning);
 
-        if (Input.GetMouseButtonDown(0) && !isAttacking) // 按下左键进行攻击
+        if (Input.GetMouseButtonDown(0) && !isAttacking)
         {
+            Debug.Log("Attacking!");
             isAttacking = true;
             animator.SetTrigger("Attack");
         }
@@ -95,6 +96,7 @@ public class walkctrl : MonoBehaviour
         {
             hasJumped = false;
             animator.SetBool("IsJumping", false);
+            isGrounded = true;
         }
     }
 
@@ -102,15 +104,8 @@ public class walkctrl : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
-            
+            isGrounded = false;
         }
-    }
-    
-    void Jump()
-    {
-        Rigidbody2D rb = GetComponent<Rigidbody2D>();
-        rb.velocity = new Vector2(rb.velocity.x, jumpForce);
-        hasJumped = true;
     }
 
     void Flip()
@@ -127,7 +122,7 @@ public class walkctrl : MonoBehaviour
 
         if (isGrounded)
         {
-
+            // 在地面上，不进行垂直速度的修改
         }
         else
         {
@@ -138,8 +133,10 @@ public class walkctrl : MonoBehaviour
         }
     }
 
+
     public void ResetAttack()
     {
+        Debug.Log("Resetting Attack");
         isAttacking = false;
     }
     
