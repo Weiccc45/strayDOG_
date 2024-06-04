@@ -37,7 +37,6 @@ public class PlayerAttack : MonoBehaviour
             enemy.GetComponent<Enemy>().TakeDamage(attackDamage);
         }
     }
-    
 
     // 用于在动画结束时重置攻击状态
     public void ResetAttack()

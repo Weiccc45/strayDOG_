@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 05294965c83a7784c8640dead2fb526b
+guid: 9d29248090a2185469e8b41c7d8e1c07
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -77,15 +77,6 @@ TextureImporter:
   - first:
       213: 2839681018347380909
     second: "\u6A19\u984C_24"
-  - first:
-      213: 3884962240894868325
-    second: "\u6A19\u984C_25"
-  - first:
-      213: 7368196042063044214
-    second: "\u6A19\u984C_26"
-  - first:
-      213: 4404760716989864630
-    second: "\u6A19\u984C_27"
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -149,10 +140,10 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 8192
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -161,14 +152,14 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
-    maxTextureSize: 2048
+    maxTextureSize: 8192
     resizeAlgorithm: 0
-    textureFormat: 3
+    textureFormat: -1
     textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
-    overridden: 1
+    overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
@@ -695,69 +686,6 @@ TextureImporter:
       bones: []
       spriteID: da0e30647d2986720800000000000000
       internalID: 2839681018347380909
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: "\u6A19\u984C_25"
-      rect:
-        serializedVersion: 2
-        x: 6416
-        y: 0
-        width: 1604
-        height: 902
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 56b185e13982ae530800000000000000
-      internalID: 3884962240894868325
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: "\u6A19\u984C_26"
-      rect:
-        serializedVersion: 2
-        x: 8020
-        y: 0
-        width: 1604
-        height: 902
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 67e5b9a0347114660800000000000000
-      internalID: 7368196042063044214
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: "\u6A19\u984C_27"
-      rect:
-        serializedVersion: 2
-        x: 9624
-        y: 0
-        width: 1604
-        height: 902
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6ba96c0e88ad02d30800000000000000
-      internalID: 4404760716989864630
       vertices: []
       indices: 
       edges: []
