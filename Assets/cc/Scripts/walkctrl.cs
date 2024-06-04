@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class walkctrl : MonoBehaviour
 {
-
+    
     public float speed = 5f; 
     public float jumpForce = 5f;
     public float groundCheckRadius = 0.1f; 
@@ -23,7 +23,10 @@ public class walkctrl : MonoBehaviour
     private Rigidbody2D rb;
     public LayerMask whatIsGround; 
     public Transform groundCheck;
-    
+    public GameObject backpack;
+    bool isOpen;
+
+
 
     void Start()
     {
@@ -32,9 +35,10 @@ public class walkctrl : MonoBehaviour
 
     }
 
-    void Update()
+    void Update() 
     {
-        
+        Openbackpack();
+
         float moveX = 0f;
         isWalking = false;
 
@@ -139,5 +143,15 @@ public class walkctrl : MonoBehaviour
         Debug.Log("Resetting Attack");
         isAttacking = false;
     }
-    
+
+    void Openbackpack()
+    {
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            isOpen = !isOpen;
+            backpack.SetActive(isOpen);
+        }
+    }
+
+
 }
