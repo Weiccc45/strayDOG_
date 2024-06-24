@@ -78,7 +78,7 @@ TextureImporter:
       213: 2839681018347380909
     second: "\u6A19\u984C_24"
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 13
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -95,10 +95,12 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
+    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMipmapLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -137,6 +139,8 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -148,6 +152,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -160,6 +165,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
@@ -700,9 +706,34 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-  spritePackingTag: 
+    nameFileIdTable:
+      "\u6A19\u984C_0": -897781793046240155
+      "\u6A19\u984C_1": -6504938717681953664
+      "\u6A19\u984C_10": -170147656070666873
+      "\u6A19\u984C_11": 784482956884290516
+      "\u6A19\u984C_12": 3896635428077658473
+      "\u6A19\u984C_13": -7643612387259133809
+      "\u6A19\u984C_14": -7129563711027543108
+      "\u6A19\u984C_15": -6671507276484676198
+      "\u6A19\u984C_16": 4601944987617474062
+      "\u6A19\u984C_17": 4425180326993841577
+      "\u6A19\u984C_18": 4980611684023081142
+      "\u6A19\u984C_19": 7026617070801614151
+      "\u6A19\u984C_2": -647479464571084567
+      "\u6A19\u984C_20": -780957039327971970
+      "\u6A19\u984C_21": 1682033116960432492
+      "\u6A19\u984C_22": -4801478263696892066
+      "\u6A19\u984C_23": 8767085722810930318
+      "\u6A19\u984C_24": 2839681018347380909
+      "\u6A19\u984C_3": 1230428786629078443
+      "\u6A19\u984C_4": 7631722744269862633
+      "\u6A19\u984C_5": -2478327261260587155
+      "\u6A19\u984C_6": -85257917861449603
+      "\u6A19\u984C_7": -1638375829051858121
+      "\u6A19\u984C_8": 2004364182118346981
+      "\u6A19\u984C_9": 8523062284127996915
+  mipmapLimitGroupName: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

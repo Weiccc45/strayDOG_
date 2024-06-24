@@ -63,7 +63,7 @@ TextureImporter:
       213: -8784388680535841450
     second: playerIdle_22
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 13
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -80,10 +80,12 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
+    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMipmapLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -122,6 +124,8 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -133,6 +137,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -145,6 +150,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
@@ -580,9 +586,29 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-  spritePackingTag: 
+    nameFileIdTable:
+      playerIdle_0: -1416604817420825889
+      playerIdle_1: 7092007494185931740
+      playerIdle_10: -1442555714953645846
+      playerIdle_11: 1179207492116395013
+      playerIdle_13: -4934352395116122338
+      playerIdle_14: -5323414356786861330
+      playerIdle_15: 4230550371780721115
+      playerIdle_16: -499249563951487970
+      playerIdle_17: -957158934026894974
+      playerIdle_18: 1004943823352382902
+      playerIdle_19: 1441946836492474960
+      playerIdle_2: 6559321199844264231
+      playerIdle_21: 6527709624459972398
+      playerIdle_22: -8784388680535841450
+      playerIdle_3: -370221667215030258
+      playerIdle_5: -4233940293520725167
+      playerIdle_6: -6456581606969360336
+      playerIdle_7: 4407850110886494484
+      playerIdle_8: -2992349589341999356
+      playerIdle_9: 2759985717285998091
+  mipmapLimitGroupName: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 
