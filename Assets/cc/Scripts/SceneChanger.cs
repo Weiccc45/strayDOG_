@@ -5,19 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class SceneChanger : MonoBehaviour
 {
-    void Update()
-    {
-        Debug.Log("腳本正在運行");
-    }
-    public string nextSceneName;
+    public string sceneName;
 
-    private void OnCollisionEnter(Collision collision)
+    void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("發生碰撞");
-        if (collision.gameObject.CompareTag("Player"))
+        // 检查碰撞对象是否是玩家
+        if (other.CompareTag("Player"))
         {
-            Debug.Log("玩家發生碰撞，正在加載下一個場景...");
-            SceneManager.LoadScene(nextSceneName);
+            // 跳转到指定场景
+            SceneManager.LoadScene(sceneName);
         }
     }
 }
