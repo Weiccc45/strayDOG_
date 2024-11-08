@@ -1,4 +1,5 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 <<<<<<< HEAD:Assets/weewee/荒地2-2.meta
 <<<<<<< HEAD
 guid: 89c38f577a08f834ba806c85a4521e43
@@ -8,6 +9,9 @@ guid: 9f91e5e26b3d2704bac7a2f595368bb9
 =======
 guid: 4468cb74d9279c1408b9f8196f7a2c38
 >>>>>>> b794cc60dd0ab09ca81a4d7325950109342967f3:Assets/weewee/公園1-1.meta
+=======
+guid: 4468cb74d9279c1408b9f8196f7a2c38
+>>>>>>> b794cc60dd0ab09ca81a4d7325950109342967f3
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
