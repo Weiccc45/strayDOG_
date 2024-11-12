@@ -9,6 +9,7 @@ TagManager:
   - Enemy
   - Monster
   - HealthItem
+  - NPC
   layers:
   - Default
   - TransparentFX
