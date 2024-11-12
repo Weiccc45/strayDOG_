@@ -13,7 +13,7 @@ public class HealthBar : MonoBehaviour
         UpdateHealthBar();
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         UnityEngine.Debug.Log("OnCollisionEnter has been triggered with object: " + collision.gameObject.name);
 
