@@ -22,9 +22,14 @@ public class HealthBar : MonoBehaviour
             TakeDamage(10); // 扣除10點血量
             UnityEngine.Debug.Log("碰到怪物，扣除10點血量");
         }
+        else if (collision.gameObject.CompareTag("HealthItem"))
+        {
+            Heal(10); // 回復10點血量
+            UnityEngine.Debug.Log("碰到回血物品，回復10點血量");
+
+            Destroy(collision.gameObject); // 碰撞後刪除回血物件
+        }
     }
-
-
 
     public void TakeDamage(int damage)
     {
