@@ -616,7 +616,7 @@ GameObject:
   - component: {fileID: 55562505}
   m_Layer: 0
   m_Name: "\u8CB4\u8CD3 Quay \u52D5\u756B"
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -724,8 +724,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 302, y: -19.3}
-  m_SizeDelta: {x: 30.8559, y: 35.9377}
+  m_AnchoredPosition: {x: 306.9879, y: -13.4906}
+  m_SizeDelta: {x: 43.3769, y: 50.5209}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &141386700
 MonoBehaviour:
@@ -4880,7 +4880,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1668386233
 RectTransform:
   m_ObjectHideFlags: 0
