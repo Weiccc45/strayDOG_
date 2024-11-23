@@ -56,9 +56,9 @@ public class TalkButton : MonoBehaviour
         {
             UnityEngine.Debug.Log("[TalkButton] Player is in trigger zone.");
 
-            if (Input.GetKeyDown(KeyCode.R))
+            if (Input.GetKeyDown(KeyCode.E))
             {
-                UnityEngine.Debug.Log("[TalkButton] R key pressed.");
+                UnityEngine.Debug.Log("[TalkButton] E key pressed.");
                 if (talkUI != null)
                 {
                     talkUI.SetActive(true);
