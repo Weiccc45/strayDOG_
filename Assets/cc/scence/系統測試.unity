@@ -779,6 +779,7 @@ MonoBehaviour:
   Button: {fileID: 164900368}
   talkUI: {fileID: 1668386232}
   dialogueText: {fileID: 45738166}
+  nextButton: {fileID: 141386700}
   dialogues:
   - "\u6C6A\uFF01"
   - "\u6C6A\u6C6A\u6C6A\uFF01\u6C6A\uFF01"
