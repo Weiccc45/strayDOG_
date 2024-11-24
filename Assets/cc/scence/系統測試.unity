@@ -778,6 +778,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Button: {fileID: 164900368}
   talkUI: {fileID: 1668386232}
+  dialogueText: {fileID: 45738166}
+  dialogues:
+  - "\u6C6A\uFF01"
+  - "\u6C6A\u6C6A\u6C6A\uFF01\u6C6A\uFF01"
+  - "\u6C6A\u6C6A\u6C6A\u6C6A\u6C6A\uFF01"
+  - "\u6211\u53EA\u662F\u4F86\u6643\u6643\uFF0C\u4F60\u600E\u9EBC\u4E86\uFF1F\t"
+  - "\u5225\u60F3\u78B0\u6211\u7684\u6BDB\uFF01\u5225\u60F3\uFF01\t"
+  - "\u8001\u5B50\u624D\u525B\u525B\u53BB\u7F8E\u5BB9\u9662\u526A\u5B8C\uFF01\u5225\u60F3\u8B93\u6211\u518D\u53BB\u4E00\u6B21\uFF01\t\t"
+  - "\u6C6A\u6C6A\u6C6A\u6C6A\u6C6A\u6C6A\uFF01"
+  - "\uFF08\u6211\u6839\u672C\u9084\u6C92\u9760\u8FD1......\uFF09\t"
 --- !u!1 &141386698
 GameObject:
   m_ObjectHideFlags: 0
