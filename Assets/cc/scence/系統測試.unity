@@ -802,7 +802,7 @@ GameObject:
   - component: {fileID: 141386701}
   - component: {fileID: 141386700}
   m_Layer: 5
-  m_Name: Button (Legacy)
+  m_Name: NEXT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
