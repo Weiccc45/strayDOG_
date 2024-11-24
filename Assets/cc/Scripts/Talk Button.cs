@@ -1,81 +1,95 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI; // 引入 UI 命名空間
 
 public class TalkButton : MonoBehaviour
 {
-    public GameObject Button;  // 按鈕提示的遊戲物件
-    public GameObject talkUI;  // 對話框 UI
+    public GameObject Button;          // 按鈕提示的遊戲物件
+    public GameObject talkUI;          // 對話框 UI
+    public Text dialogueText;          // 顯示台詞的 Text 元件
+    public List<string> dialogues;     // 儲存角色台詞的列表
+    private int currentDialogueIndex;  // 當前台詞索引
     private bool isPlayerInTrigger = false; // 紀錄玩家是否在觸發區域內
 
     private void Start()
     {
-        UnityEngine.Debug.Log("[TalkButton] Script initialized.");
-
-        if (Button == null)
+        if (Button == null || talkUI == null || dialogueText == null)
         {
-            UnityEngine.Debug.LogError("[TalkButton] Button is not assigned! Please assign it in the Inspector.");
+            Debug.LogError("[TalkButton] Please assign all required components in the Inspector.");
         }
 
-        if (talkUI == null)
-        {
-            UnityEngine.Debug.LogError("[TalkButton] talkUI is not assigned! Please assign it in the Inspector.");
-        }
-
+        // 初始化 UI 狀態
         if (Button != null) Button.SetActive(false);
         if (talkUI != null) talkUI.SetActive(false);
+
+        // 初始化台詞索引
+        currentDialogueIndex = 0;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        UnityEngine.Debug.Log($"[TalkButton] Trigger entered by: {other.name}");
-
         if (other.CompareTag("Player"))
         {
             isPlayerInTrigger = true;
-            UnityEngine.Debug.Log("[TalkButton] Player entered trigger zone.");
             if (Button != null) Button.SetActive(true);
         }
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        UnityEngine.Debug.Log($"[TalkButton] Trigger exited by: {other.name}");
-
         if (other.CompareTag("Player"))
         {
             isPlayerInTrigger = false;
-            UnityEngine.Debug.Log("[TalkButton] Player exited trigger zone.");
             if (Button != null) Button.SetActive(false);
 
-            // Close the talkUI when leaving the trigger zone
             if (talkUI != null && talkUI.activeSelf)
             {
                 talkUI.SetActive(false);
-                UnityEngine.Debug.Log("[TalkButton] talkUI deactivated as player left the trigger zone.");
+                ResetDialogue();
             }
         }
     }
 
     private void Update()
     {
-        if (isPlayerInTrigger)
+        if (isPlayerInTrigger && Input.GetKeyDown(KeyCode.E))
         {
-            UnityEngine.Debug.Log("[TalkButton] Player is in trigger zone.");
-
-            if (Input.GetKeyDown(KeyCode.E))
+            if (talkUI != null && dialogueText != null)
             {
-                if (talkUI != null)
+                if (!talkUI.activeSelf)
                 {
-                    // Toggle talkUI's active state
-                    talkUI.SetActive(!talkUI.activeSelf);
-                    UnityEngine.Debug.Log($"[TalkButton] talkUI active state toggled: {talkUI.activeSelf}");
+                    // 顯示對話框並顯示第一句台詞
+                    talkUI.SetActive(true);
+                    dialogueText.text = dialogues[currentDialogueIndex];
                 }
                 else
                 {
-                    UnityEngine.Debug.LogError("[TalkButton] talkUI is not assigned!");
+                    // 切換到下一句台詞
+                    DisplayNextDialogue();
                 }
             }
         }
+    }
+
+    private void DisplayNextDialogue()
+    {
+        currentDialogueIndex++;
+
+        if (currentDialogueIndex < dialogues.Count)
+        {
+            dialogueText.text = dialogues[currentDialogueIndex];
+        }
+        else
+        {
+            // 如果台詞已經全部顯示完畢，關閉對話框並重置台詞
+            talkUI.SetActive(false);
+            ResetDialogue();
+        }
+    }
+
+    private void ResetDialogue()
+    {
+        currentDialogueIndex = 0;
     }
 }
