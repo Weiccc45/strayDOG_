@@ -47,6 +47,13 @@ public class TalkButton : MonoBehaviour
             isPlayerInTrigger = false;
             UnityEngine.Debug.Log("[TalkButton] Player exited trigger zone.");
             if (Button != null) Button.SetActive(false);
+
+            // Close the talkUI when leaving the trigger zone
+            if (talkUI != null && talkUI.activeSelf)
+            {
+                talkUI.SetActive(false);
+                UnityEngine.Debug.Log("[TalkButton] talkUI deactivated as player left the trigger zone.");
+            }
         }
     }
 
@@ -58,11 +65,11 @@ public class TalkButton : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.E))
             {
-                UnityEngine.Debug.Log("[TalkButton] E key pressed.");
                 if (talkUI != null)
                 {
-                    talkUI.SetActive(true);
-                    UnityEngine.Debug.Log("[TalkButton] talkUI is now active.");
+                    // Toggle talkUI's active state
+                    talkUI.SetActive(!talkUI.activeSelf);
+                    UnityEngine.Debug.Log($"[TalkButton] talkUI active state toggled: {talkUI.activeSelf}");
                 }
                 else
                 {
