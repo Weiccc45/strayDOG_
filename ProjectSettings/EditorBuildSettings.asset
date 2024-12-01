@@ -5,16 +5,16 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
+  - enabled: 1
     path: Assets/cc/scence/MainMenu.unity
     guid: 56fe49bf680433d42b0b5d7be08af7c3
-  - enabled: 0
+  - enabled: 1
     path: Assets/cc/scence/opening.unity
     guid: 66adf4a7b92c54a45990a8645142f9de
   - enabled: 1
     path: Assets/cc/scence/stage.1-1.unity
     guid: 20cc28d961569e149a39da2f7dcf6728
-  - enabled: 0
+  - enabled: 1
     path: Assets/cc/scence/stage.1-2.unity
     guid: 2ee44f70d5ae3284d9abad1bab14eb54
   - enabled: 0
