@@ -1367,6 +1367,7 @@ MonoBehaviour:
   maxY: 10
   verticalSpeed: 5
   runSpeed: 13
+  isTalking: 0
   whatIsGround:
     serializedVersion: 2
     m_Bits: 1024
@@ -3660,7 +3661,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -227.2, y: 148.8}
+  m_AnchoredPosition: {x: -227.2, y: 186}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1089477067
@@ -5875,7 +5876,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 323, y: -163}
+  m_AnchoredPosition: {x: 323, y: 160}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2086119426
