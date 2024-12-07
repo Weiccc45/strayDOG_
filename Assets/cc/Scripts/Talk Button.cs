@@ -1,35 +1,46 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI; // ¤Ş¤J UI ©R¦WªÅ¶¡
+using UnityEngine.UI;
+using Cinemachine;
 
 public class TalkButton : MonoBehaviour
 {
-    public GameObject Button;          // «ö¶s´£¥Üªº¹CÀ¸ª«¥ó
-    public GameObject talkUI;          // ¹ï¸Ü®Ø UI
-    public Text dialogueText;          // Åã¥Ü¥xµüªº Text ¤¸¥ó
-    public Button nextButton;          // ¤U¤@¥y«ö¶s
-    public List<string> dialogues;     // Àx¦s¨¤¦â¥xµüªº¦Cªí
-    private int currentDialogueIndex;  // ·í«e¥xµü¯Á¤Ş
-    private bool isPlayerInTrigger = false; // ¬ö¿ıª±®a¬O§_¦bÄ²µo°Ï°ì¤º
+    public GameObject Button;
+    public GameObject talkUI;
+    public Text dialogueText;
+    public Button nextButton;
+    public List<string> dialogues;
+
+    public Transform cameraFocusPoint; // ç”¨äºæ”¾å¤§çš„ç„¦ç‚¹ä½ç½®
+    public float cameraTransitionTime = 0.5f;
+    public CinemachineVirtualCamera talkCamera; // å¯¹è¯æ—¶çš„é•œå¤´
+    public CinemachineVirtualCamera defaultCamera;
+
+    private int currentDialogueIndex = 0;
+    private bool isPlayerInTrigger = false;
+    private walkctrl playerController;
+    private GameObject player;
+    private Camera mainCamera;
+    private Vector3 originalCameraPosition;
+    private bool isTalking = false;
 
     private void Start()
     {
-        if (Button == null || talkUI == null || dialogueText == null || nextButton == null)
+        if (Button == null || talkUI == null || dialogueText == null || nextButton == null || cameraFocusPoint == null)
         {
-            Debug.LogError("[TalkButton] Please assign all required components in the Inspector.");
+            Debug.LogError("è¯·åœ¨ Inspector ä¸­è®¾ç½®æ‰€æœ‰å¿…éœ€çš„ç»„ä»¶ï¼");
+            return;
         }
 
-        // ªì©l¤Æ UI ª¬ºA
-        if (Button != null) Button.SetActive(false);
-        if (talkUI != null) talkUI.SetActive(false);
+        playerController = FindObjectOfType<walkctrl>();
+        mainCamera = Camera.main;
+        originalCameraPosition = mainCamera.transform.position;
 
-        // ªì©l¤Æ«ö¶s
-        if (nextButton != null) nextButton.gameObject.SetActive(false);
-        nextButton.onClick.AddListener(DisplayNextDialogue); // ¸j©w«ö¶sÂIÀ»¨Æ¥ó
-
-        // ªì©l¤Æ¥xµü¯Á¤Ş
-        currentDialogueIndex = 0;
+        Button.SetActive(false);
+        talkUI.SetActive(false);
+        nextButton.gameObject.SetActive(false);
+        nextButton.onClick.AddListener(DisplayNextDialogue);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -37,7 +48,7 @@ public class TalkButton : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             isPlayerInTrigger = true;
-            if (Button != null) Button.SetActive(true);
+            Button.SetActive(true);
         }
     }
 
@@ -46,12 +57,13 @@ public class TalkButton : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             isPlayerInTrigger = false;
-            if (Button != null) Button.SetActive(false);
-
-            if (talkUI != null && talkUI.activeSelf)
+            if (Button != null) // æ£€æŸ¥Buttonæ˜¯å¦ä¸ºnull
             {
-                talkUI.SetActive(false);
-                ResetDialogue();
+                Button.SetActive(false);
+            }
+            if (isTalking)
+            {
+                EndDialogue();
             }
         }
     }
@@ -60,42 +72,124 @@ public class TalkButton : MonoBehaviour
     {
         if (isPlayerInTrigger && Input.GetKeyDown(KeyCode.E))
         {
-            if (talkUI != null && dialogueText != null)
+            if (!talkUI.activeSelf)
             {
-                if (!talkUI.activeSelf)
-                {
-                    // Åã¥Ü¹ï¸Ü®Ø¨ÃÅã¥Ü²Ä¤@¥y¥xµü
-                    talkUI.SetActive(true);
-                    dialogueText.text = dialogues[currentDialogueIndex];
-                    if (nextButton != null) nextButton.gameObject.SetActive(true); // Åã¥Ü¤U¤@¥y«ö¶s
-                }
-                else
-                {
-                    // ¦pªG¹ï¸Ü®Ø¤w¸g¶}±Ò¡A«h¤£¶i¦æ¥ô¦ó¾Ş§@
-                }
+                StartDialogue();
+                talkUI.SetActive(true);
+                dialogueText.text = dialogues[currentDialogueIndex];
+                if (nextButton != null) nextButton.gameObject.SetActive(true);
             }
+        }
+
+        if (isPlayerInTrigger)
+        {
+            // ç¡®ä¿æŒ‰é’®è·Ÿéš NPC çš„ä½ç½®
+            if (Button != null)
+            {
+                Vector3 npcPosition = transform.position; // è·å–NPCçš„ä¸–ç•Œåæ ‡
+                // å°†NPCä½ç½®è½¬æ¢ä¸ºå±å¹•åæ ‡å¹¶å¢åŠ åç§»é‡ (ä¾‹å¦‚åœ¨NPCå¤´é¡¶)
+                Button.transform.position = Camera.main.WorldToScreenPoint(npcPosition + new Vector3(-5.3f, -2f, 0)); // è°ƒæ•´åç§»é‡
+            }
+        }
+    }
+
+    private void StartDialogue()
+    {
+        isTalking = true;
+        if (playerController != null) playerController.isTalking = true;
+
+        Button.SetActive(false);
+        talkUI.SetActive(true);
+        dialogueText.text = dialogues[currentDialogueIndex];
+        nextButton.gameObject.SetActive(true);
+
+        StartCoroutine(MoveCameraToFocusPoint());
+
+        if (talkCamera != null)
+        {
+            talkCamera.Priority = 10; // æå‡ä¼˜å…ˆçº§
+        }
+        if (defaultCamera != null)
+        {
+            defaultCamera.Priority = 0; // é™ä½ä¼˜å…ˆçº§
+        }
+    }
+
+    private void EndDialogue()
+    {
+        isTalking = false;
+        if (playerController != null) playerController.isTalking = false;
+
+        talkUI.SetActive(false);
+        nextButton.gameObject.SetActive(false);
+        ResetDialogue();
+
+        StartCoroutine(MoveCameraBack());
+
+        if (talkCamera != null)
+        {
+            talkCamera.Priority = 0;
+        }
+        if (defaultCamera != null)
+        {
+            defaultCamera.Priority = 10;
         }
     }
 
     private void DisplayNextDialogue()
     {
         currentDialogueIndex++;
-
         if (currentDialogueIndex < dialogues.Count)
         {
             dialogueText.text = dialogues[currentDialogueIndex];
         }
         else
         {
-            // ¦pªG¥xµü¤w¸g¥ş³¡Åã¥Ü§¹²¦¡AÃö³¬¹ï¸Ü®Ø¨Ã­«¸m¥xµü
             if (talkUI != null) talkUI.SetActive(false);
-            if (nextButton != null) nextButton.gameObject.SetActive(false); // ÁôÂÃ«ö¶s
+            if (nextButton != null) nextButton.gameObject.SetActive(false);
             ResetDialogue();
+            EndDialogue();
         }
     }
 
     private void ResetDialogue()
     {
         currentDialogueIndex = 0;
+    }
+
+    private IEnumerator MoveCameraToFocusPoint()
+    {
+        if (cameraFocusPoint == null)
+        {
+            Debug.LogError("è¯·ç¡®ä¿å·²è®¾ç½®é•œå¤´èšç„¦ä½ç½®ï¼");
+            yield break;
+        }
+        Vector3 startPosition = mainCamera.transform.position;
+        Vector3 endPosition = new Vector3(cameraFocusPoint.position.x, cameraFocusPoint.position.y, mainCamera.transform.position.z);
+
+        float elapsedTime = 0f;
+        while (elapsedTime < cameraTransitionTime)
+        {
+            mainCamera.transform.position = Vector3.Lerp(startPosition, endPosition, elapsedTime / cameraTransitionTime);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        mainCamera.transform.position = endPosition;
+    }
+
+    private IEnumerator MoveCameraBack()
+    {
+        Vector3 startPosition = mainCamera.transform.position;
+        float elapsedTime = 0f;
+
+        while (elapsedTime < cameraTransitionTime)
+        {
+            mainCamera.transform.position = Vector3.Lerp(startPosition, originalCameraPosition, elapsedTime / cameraTransitionTime);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        mainCamera.transform.position = originalCameraPosition;
     }
 }

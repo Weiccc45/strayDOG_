@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/cc/scence/op1.unity
     guid: 160d0c5e8d9fe42708f1e1c15969637b
   - enabled: 1
+    path: Assets/cc/scence/op2.unity
+    guid: 8145e2eb32af54ed7a50812a1b87cabd
+  - enabled: 1
     path: Assets/cc/scence/opening.unity
     guid: 66adf4a7b92c54a45990a8645142f9de
   - enabled: 1

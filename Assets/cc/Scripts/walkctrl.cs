@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 
 public class walkctrl : MonoBehaviour
@@ -21,20 +20,19 @@ public class walkctrl : MonoBehaviour
     private bool hasJumped = false;
     private bool isRunning = false;
     private bool isAttacking = false; 
+    public bool isTalking = false;
     private Animator animator; 
     private Rigidbody2D rb;
     public LayerMask whatIsGround; 
     public Transform groundCheck;
     public GameObject backpack;
     bool isOpen;
-
-
+    
 
     void Start()
     {
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
-
     }
 
     void Update() 
@@ -42,6 +40,19 @@ public class walkctrl : MonoBehaviour
         Openbackpack();
 
         float moveX = 0f;
+        if (isTalking)
+            return;
+        if (Input.GetKey(KeyCode.A))
+        {
+            moveX = -1f;
+        }
+        if (Input.GetKey(KeyCode.D))
+        {
+            moveX = 1f;
+        }
+
+        transform.Translate(Vector3.right * moveX * speed * Time.deltaTime);
+
         isWalking = false;
 
         if (Input.GetKey(KeyCode.A))
@@ -94,8 +105,9 @@ public class walkctrl : MonoBehaviour
             isAttacking = true;
             animator.SetTrigger("Attack");
         }
-    }
 
+    }
+    
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
