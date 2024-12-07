@@ -57,10 +57,13 @@ public class TalkButton : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             isPlayerInTrigger = false;
-            if (Button != null) // 检查Button是否为null
+        
+            // 在这里也加一个 null 检查
+            if (Button != null)
             {
                 Button.SetActive(false);
             }
+
             if (isTalking)
             {
                 EndDialogue();
@@ -88,7 +91,16 @@ public class TalkButton : MonoBehaviour
             {
                 Vector3 npcPosition = transform.position; // 获取NPC的世界坐标
                 // 将NPC位置转换为屏幕坐标并增加偏移量 (例如在NPC头顶)
-                Button.transform.position = Camera.main.WorldToScreenPoint(npcPosition + new Vector3(-5.3f, -2f, 0)); // 调整偏移量
+                Button.transform.position = Camera.main.WorldToScreenPoint(npcPosition + new Vector3(-5.3f, -2f, 0));
+            }
+
+            // 按下空白键切换对话
+            if (Input.GetKeyDown(KeyCode.Space)) // 监听空白键
+            {
+                if (talkUI.activeSelf)
+                {
+                    DisplayNextDialogue();
+                }
             }
         }
     }
@@ -118,10 +130,17 @@ public class TalkButton : MonoBehaviour
     private void EndDialogue()
     {
         isTalking = false;
-        if (playerController != null) playerController.isTalking = false;
+        // 检查是否为 null
+        if (playerController != null) 
+            playerController.isTalking = false;
 
-        talkUI.SetActive(false);
-        nextButton.gameObject.SetActive(false);
+        // 只在Button存在的情况下才调用SetActive
+        if (talkUI != null)
+            talkUI.SetActive(false);
+    
+        if (nextButton != null)
+            nextButton.gameObject.SetActive(false);
+    
         ResetDialogue();
 
         StartCoroutine(MoveCameraBack());
