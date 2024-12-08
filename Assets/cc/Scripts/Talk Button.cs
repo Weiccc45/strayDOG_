@@ -112,14 +112,23 @@ public class TalkButton : MonoBehaviour
 
     private void DisplayNextDialogue()
     {
+        // 如果在等待按键，则不执行对话跳转
+        if (isWaitingForKeyPress)
+        {
+            UnityEngine.Debug.Log("等待玩家按下 WASD 键...");
+            return;
+        }
+
         currentDialogueIndex++;
         if (currentDialogueIndex < dialogues.Count)
         {
             dialogueText.text = dialogues[currentDialogueIndex];
+
+            // 如果对话内容为特定文字，进入按键等待模式
             if (dialogues[currentDialogueIndex] == "Element 12")
             {
                 isWaitingForKeyPress = true;
-                UnityEngine.Debug.Log("Waiting for player to press W, A, S, or D.");
+                UnityEngine.Debug.Log("进入等待模式：按 W, A, S, 或 D 来继续。");
             }
         }
         else
@@ -127,6 +136,7 @@ public class TalkButton : MonoBehaviour
             EndDialogue();
         }
     }
+
 
     private void StartDialogue()
     {
