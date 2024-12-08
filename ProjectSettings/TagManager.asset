@@ -10,6 +10,7 @@ TagManager:
   - Monster
   - HealthItem
   - NPC
+  - mainCamera
   layers:
   - Default
   - TransparentFX
