@@ -8,7 +8,7 @@ public class TalkButton : MonoBehaviour
 {
     public GameObject Button;
     public GameObject talkUI;
-    public Text dialogueText;
+    public UnityEngine.UI.Text dialogueText; // 明确指定 UnityEngine.UI.Text
     public Button nextButton;
     public List<string> dialogues;
 
@@ -24,12 +24,13 @@ public class TalkButton : MonoBehaviour
     private Camera mainCamera;
     private Vector3 originalCameraPosition;
     private bool isTalking = false;
+    private bool isWaitingForKeyPress = false; // 是否等待玩家按下按键
 
     private void Start()
     {
         if (Button == null || talkUI == null || dialogueText == null || nextButton == null || cameraFocusPoint == null)
         {
-            Debug.LogError("请在 Inspector 中设置所有必需的组件！");
+            UnityEngine.Debug.LogError("请在 Inspector 中设置所有必需的组件！");
             return;
         }
 
@@ -57,8 +58,6 @@ public class TalkButton : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             isPlayerInTrigger = false;
-        
-            // 在这里也加一个 null 检查
             if (Button != null)
             {
                 Button.SetActive(false);
@@ -78,30 +77,54 @@ public class TalkButton : MonoBehaviour
             if (!talkUI.activeSelf)
             {
                 StartDialogue();
-                talkUI.SetActive(true);
                 dialogueText.text = dialogues[currentDialogueIndex];
-                if (nextButton != null) nextButton.gameObject.SetActive(true);
+                nextButton.gameObject.SetActive(true);
+            }
+        }
+
+        if (isTalking)
+        {
+            if (isWaitingForKeyPress &&
+                (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D)))
+            {
+                isWaitingForKeyPress = false;
+                currentDialogueIndex++;
+                if (currentDialogueIndex < dialogues.Count)
+                {
+                    dialogueText.text = dialogues[currentDialogueIndex];
+                }
+                else
+                {
+                    EndDialogue();
+                }
+            }
+            else if (!isWaitingForKeyPress && Input.GetKeyDown(KeyCode.Space))
+            {
+                DisplayNextDialogue();
             }
         }
 
         if (isPlayerInTrigger)
         {
-            // 确保按钮跟随 NPC 的位置
-            if (Button != null)
-            {
-                Vector3 npcPosition = transform.position; // 获取NPC的世界坐标
-                // 将NPC位置转换为屏幕坐标并增加偏移量 (例如在NPC头顶)
-                Button.transform.position = Camera.main.WorldToScreenPoint(npcPosition + new Vector3(-5.3f, -2f, 0));
-            }
+            Button.transform.position = Camera.main.WorldToScreenPoint(transform.position + new Vector3(0, 1.5f, 0));
+        }
+    }
 
-            // 按下空白键切换对话
-            if (Input.GetKeyDown(KeyCode.Space)) // 监听空白键
+    private void DisplayNextDialogue()
+    {
+        currentDialogueIndex++;
+        if (currentDialogueIndex < dialogues.Count)
+        {
+            dialogueText.text = dialogues[currentDialogueIndex];
+            if (dialogues[currentDialogueIndex] == "Element 12")
             {
-                if (talkUI.activeSelf)
-                {
-                    DisplayNextDialogue();
-                }
+                isWaitingForKeyPress = true;
+                UnityEngine.Debug.Log("Waiting for player to press W, A, S, or D.");
             }
+        }
+        else
+        {
+            EndDialogue();
         }
     }
 
@@ -115,35 +138,29 @@ public class TalkButton : MonoBehaviour
         dialogueText.text = dialogues[currentDialogueIndex];
         nextButton.gameObject.SetActive(true);
 
-        StartCoroutine(MoveCameraToFocusPoint());
+        StartCoroutine(MoveCamera(cameraFocusPoint.position));
 
         if (talkCamera != null)
         {
-            talkCamera.Priority = 10; // 提升优先级
+            talkCamera.Priority = 10;
         }
         if (defaultCamera != null)
         {
-            defaultCamera.Priority = 0; // 降低优先级
+            defaultCamera.Priority = 0;
         }
     }
 
     private void EndDialogue()
     {
         isTalking = false;
-        // 检查是否为 null
-        if (playerController != null) 
-            playerController.isTalking = false;
+        if (playerController != null) playerController.isTalking = false;
 
-        // 只在Button存在的情况下才调用SetActive
-        if (talkUI != null)
-            talkUI.SetActive(false);
-    
-        if (nextButton != null)
-            nextButton.gameObject.SetActive(false);
-    
+        if (talkUI != null) talkUI.SetActive(false);
+        if (nextButton != null) nextButton.gameObject.SetActive(false);
+
         ResetDialogue();
 
-        StartCoroutine(MoveCameraBack());
+        StartCoroutine(MoveCamera(originalCameraPosition));
 
         if (talkCamera != null)
         {
@@ -155,60 +172,23 @@ public class TalkButton : MonoBehaviour
         }
     }
 
-    private void DisplayNextDialogue()
-    {
-        currentDialogueIndex++;
-        if (currentDialogueIndex < dialogues.Count)
-        {
-            dialogueText.text = dialogues[currentDialogueIndex];
-        }
-        else
-        {
-            if (talkUI != null) talkUI.SetActive(false);
-            if (nextButton != null) nextButton.gameObject.SetActive(false);
-            ResetDialogue();
-            EndDialogue();
-        }
-    }
-
     private void ResetDialogue()
     {
         currentDialogueIndex = 0;
     }
 
-    private IEnumerator MoveCameraToFocusPoint()
+    private IEnumerator MoveCamera(Vector3 targetPosition)
     {
-        if (cameraFocusPoint == null)
-        {
-            Debug.LogError("请确保已设置镜头聚焦位置！");
-            yield break;
-        }
-        Vector3 startPosition = mainCamera.transform.position;
-        Vector3 endPosition = new Vector3(cameraFocusPoint.position.x, cameraFocusPoint.position.y, mainCamera.transform.position.z);
-
         float elapsedTime = 0f;
+        Vector3 startPosition = mainCamera.transform.position;
+
         while (elapsedTime < cameraTransitionTime)
         {
-            mainCamera.transform.position = Vector3.Lerp(startPosition, endPosition, elapsedTime / cameraTransitionTime);
+            mainCamera.transform.position = Vector3.Lerp(startPosition, targetPosition, elapsedTime / cameraTransitionTime);
             elapsedTime += Time.deltaTime;
             yield return null;
         }
 
-        mainCamera.transform.position = endPosition;
-    }
-
-    private IEnumerator MoveCameraBack()
-    {
-        Vector3 startPosition = mainCamera.transform.position;
-        float elapsedTime = 0f;
-
-        while (elapsedTime < cameraTransitionTime)
-        {
-            mainCamera.transform.position = Vector3.Lerp(startPosition, originalCameraPosition, elapsedTime / cameraTransitionTime);
-            elapsedTime += Time.deltaTime;
-            yield return null;
-        }
-
-        mainCamera.transform.position = originalCameraPosition;
+        mainCamera.transform.position = targetPosition;
     }
 }
