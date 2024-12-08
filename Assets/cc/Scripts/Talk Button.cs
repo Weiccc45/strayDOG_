@@ -4,13 +4,11 @@ using UnityEngine;
 using UnityEngine.UI;
 using Cinemachine;
 
-
 public class TalkButton : MonoBehaviour
 {
     public GameObject Button;
     public GameObject talkUI;
-    public UnityEngine.UI.Text dialogueText; // 明確指定命名空間
-    public UnityEngine.UI.Text titleText;   // 明確指定命名空間
+    public Text dialogueText;
     public Button nextButton;
     public List<string> dialogues;
 
@@ -29,7 +27,7 @@ public class TalkButton : MonoBehaviour
 
     private void Start()
     {
-        if (Button == null || talkUI == null || dialogueText == null || nextButton == null || cameraFocusPoint == null || titleText == null)
+        if (Button == null || talkUI == null || dialogueText == null || nextButton == null || cameraFocusPoint == null)
         {
             Debug.LogError("请在 Inspector 中设置所有必需的组件！");
             return;
@@ -59,7 +57,8 @@ public class TalkButton : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             isPlayerInTrigger = false;
-
+        
+            // 在这里也加一个 null 检查
             if (Button != null)
             {
                 Button.SetActive(false);
@@ -87,13 +86,16 @@ public class TalkButton : MonoBehaviour
 
         if (isPlayerInTrigger)
         {
+            // 确保按钮跟随 NPC 的位置
             if (Button != null)
             {
-                Vector3 npcPosition = transform.position;
+                Vector3 npcPosition = transform.position; // 获取NPC的世界坐标
+                // 将NPC位置转换为屏幕坐标并增加偏移量 (例如在NPC头顶)
                 Button.transform.position = Camera.main.WorldToScreenPoint(npcPosition + new Vector3(-5.3f, -2f, 0));
             }
 
-            if (Input.GetKeyDown(KeyCode.Space))
+            // 按下空白键切换对话
+            if (Input.GetKeyDown(KeyCode.Space)) // 监听空白键
             {
                 if (talkUI.activeSelf)
                 {
@@ -111,33 +113,34 @@ public class TalkButton : MonoBehaviour
         Button.SetActive(false);
         talkUI.SetActive(true);
         dialogueText.text = dialogues[currentDialogueIndex];
-        titleText.text = "对话标题"; // 设置标题文本的初始值
         nextButton.gameObject.SetActive(true);
 
         StartCoroutine(MoveCameraToFocusPoint());
 
         if (talkCamera != null)
         {
-            talkCamera.Priority = 10;
+            talkCamera.Priority = 10; // 提升优先级
         }
         if (defaultCamera != null)
         {
-            defaultCamera.Priority = 0;
+            defaultCamera.Priority = 0; // 降低优先级
         }
     }
 
     private void EndDialogue()
     {
         isTalking = false;
-        if (playerController != null)
+        // 检查是否为 null
+        if (playerController != null) 
             playerController.isTalking = false;
 
+        // 只在Button存在的情况下才调用SetActive
         if (talkUI != null)
             talkUI.SetActive(false);
-
+    
         if (nextButton != null)
             nextButton.gameObject.SetActive(false);
-
+    
         ResetDialogue();
 
         StartCoroutine(MoveCameraBack());
