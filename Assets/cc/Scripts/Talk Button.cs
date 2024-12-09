@@ -8,9 +8,10 @@ public class TalkButton : MonoBehaviour
 {
     public GameObject Button;
     public GameObject talkUI;
-    public UnityEngine.UI.Text dialogueText; // 明确指定 UnityEngine.UI.Text
+    public UnityEngine.UI.Text dialogueText; // 对话内容
+    public UnityEngine.UI.Text speakerNameText; // 讲话人的名字
     public Button nextButton;
-    public List<string> dialogues;
+    public List<Dialogue> dialogues; // 存储对话和讲者的名字
 
     public Transform cameraFocusPoint; // 用于放大的焦点位置
     public float cameraTransitionTime = 0.5f;
@@ -26,9 +27,16 @@ public class TalkButton : MonoBehaviour
     private bool isTalking = false;
     private bool isWaitingForKeyPress = false; // 是否等待玩家按下按键
 
+    [System.Serializable]
+    public class Dialogue
+    {
+        public string speakerName; // 讲话人名字
+        public string content;     // 对话内容
+    }
+
     private void Start()
     {
-        if (Button == null || talkUI == null || dialogueText == null || nextButton == null || cameraFocusPoint == null)
+        if (Button == null || talkUI == null || dialogueText == null || speakerNameText == null || nextButton == null || cameraFocusPoint == null)
         {
             UnityEngine.Debug.LogError("请在 Inspector 中设置所有必需的组件！");
             return;
@@ -77,7 +85,8 @@ public class TalkButton : MonoBehaviour
             if (!talkUI.activeSelf)
             {
                 StartDialogue();
-                dialogueText.text = dialogues[currentDialogueIndex];
+                dialogueText.text = dialogues[currentDialogueIndex].content;
+                speakerNameText.text = dialogues[currentDialogueIndex].speakerName;
                 nextButton.gameObject.SetActive(true);
             }
         }
@@ -91,7 +100,8 @@ public class TalkButton : MonoBehaviour
                 currentDialogueIndex++;
                 if (currentDialogueIndex < dialogues.Count)
                 {
-                    dialogueText.text = dialogues[currentDialogueIndex];
+                    dialogueText.text = dialogues[currentDialogueIndex].content;
+                    speakerNameText.text = dialogues[currentDialogueIndex].speakerName;
                 }
                 else
                 {
@@ -122,10 +132,11 @@ public class TalkButton : MonoBehaviour
         currentDialogueIndex++;
         if (currentDialogueIndex < dialogues.Count)
         {
-            dialogueText.text = dialogues[currentDialogueIndex];
+            dialogueText.text = dialogues[currentDialogueIndex].content;
+            speakerNameText.text = dialogues[currentDialogueIndex].speakerName;
 
             // 如果对话内容为特定文字，进入按键等待模式
-            if (dialogues[currentDialogueIndex] == "Element 12")
+            if (dialogues[currentDialogueIndex].content == "Element 12")
             {
                 isWaitingForKeyPress = true;
                 UnityEngine.Debug.Log("进入等待模式：按 W, A, S, 或 D 来继续。");
@@ -137,7 +148,6 @@ public class TalkButton : MonoBehaviour
         }
     }
 
-
     private void StartDialogue()
     {
         isTalking = true;
@@ -145,7 +155,8 @@ public class TalkButton : MonoBehaviour
 
         Button.SetActive(false);
         talkUI.SetActive(true);
-        dialogueText.text = dialogues[currentDialogueIndex];
+        dialogueText.text = dialogues[currentDialogueIndex].content;
+        speakerNameText.text = dialogues[currentDialogueIndex].speakerName;
         nextButton.gameObject.SetActive(true);
 
         StartCoroutine(MoveCamera(cameraFocusPoint.position));
