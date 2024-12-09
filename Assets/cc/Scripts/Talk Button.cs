@@ -212,4 +212,5 @@ public class TalkButton : MonoBehaviour
 
         mainCamera.transform.position = targetPosition;
     }
+    
 }

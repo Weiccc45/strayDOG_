@@ -1,0 +1,379 @@
+fileFormatVersion: 2
+guid: 46b6c9d02cc4696428b9aecd959796bb
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: "\u67EF\u57FA_Corgi_\u52D5\u756B_0"
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 806
+        width: 670
+        height: 535
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54940163d1b81ee4197da5d0e61a0656
+      internalID: -1551036361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u67EF\u57FA_Corgi_\u52D5\u756B_1"
+      rect:
+        serializedVersion: 2
+        x: 757
+        y: 804
+        width: 670
+        height: 535
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85fbf59628b84bf49a602e442c57571a
+      internalID: 1515024157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u67EF\u57FA_Corgi_\u52D5\u756B_2"
+      rect:
+        serializedVersion: 2
+        x: 1467
+        y: 804
+        width: 670
+        height: 535
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70a8f1a5a2bcaa24a9dabbfecbab8377
+      internalID: 665579463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u67EF\u57FA_Corgi_\u52D5\u756B_3"
+      rect:
+        serializedVersion: 2
+        x: 2175
+        y: 804
+        width: 670
+        height: 535
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1eb3e1753d317e4e875fd7454e97380
+      internalID: 919789940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u67EF\u57FA_Corgi_\u52D5\u756B_4"
+      rect:
+        serializedVersion: 2
+        x: 2885
+        y: 804
+        width: 670
+        height: 535
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa568b2c3bd496f47833cad38dda4fea
+      internalID: -253749302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u67EF\u57FA_Corgi_\u52D5\u756B_5"
+      rect:
+        serializedVersion: 2
+        x: 3590
+        y: 804
+        width: 670
+        height: 535
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8d10b25fdc70c747b14f1d4869c42db
+      internalID: -554464520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u67EF\u57FA_Corgi_\u52D5\u756B_6"
+      rect:
+        serializedVersion: 2
+        x: 4303
+        y: 804
+        width: 660
+        height: 535
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df75bf3a7301b2549800084edf51ab78
+      internalID: -87017234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u67EF\u57FA_Corgi_\u52D5\u756B_7"
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 95
+        width: 670
+        height: 535
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5be81c4f0276412428fb19979b85fa62
+      internalID: -236220950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u67EF\u57FA_Corgi_\u52D5\u756B_8"
+      rect:
+        serializedVersion: 2
+        x: 760
+        y: 95
+        width: 670
+        height: 535
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9a359f5f67f66b4fb81ba744935ca42
+      internalID: -1488356614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u67EF\u57FA_Corgi_\u52D5\u756B_9"
+      rect:
+        serializedVersion: 2
+        x: 1467
+        y: 95
+        width: 670
+        height: 535
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00fa4e07301734542b1cb39986cf8966
+      internalID: 1343356921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u67EF\u57FA_Corgi_\u52D5\u756B_10"
+      rect:
+        serializedVersion: 2
+        x: 2175
+        y: 95
+        width: 670
+        height: 535
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29ce0950ec783b543a4e0c7bc2e52af6
+      internalID: -1477843929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u67EF\u57FA_Corgi_\u52D5\u756B_11"
+      rect:
+        serializedVersion: 2
+        x: 2885
+        y: 95
+        width: 639
+        height: 535
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b04ead4504fade44a310a32ce2fb2db
+      internalID: 148010092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      "\u67EF\u57FA_Corgi_\u52D5\u756B_0": -1551036361
+      "\u67EF\u57FA_Corgi_\u52D5\u756B_1": 1515024157
+      "\u67EF\u57FA_Corgi_\u52D5\u756B_10": -1477843929
+      "\u67EF\u57FA_Corgi_\u52D5\u756B_11": 148010092
+      "\u67EF\u57FA_Corgi_\u52D5\u756B_12": 196315360
+      "\u67EF\u57FA_Corgi_\u52D5\u756B_2": 665579463
+      "\u67EF\u57FA_Corgi_\u52D5\u756B_3": 919789940
+      "\u67EF\u57FA_Corgi_\u52D5\u756B_4": -253749302
+      "\u67EF\u57FA_Corgi_\u52D5\u756B_5": -554464520
+      "\u67EF\u57FA_Corgi_\u52D5\u756B_6": -87017234
+      "\u67EF\u57FA_Corgi_\u52D5\u756B_7": -236220950
+      "\u67EF\u57FA_Corgi_\u52D5\u756B_8": -1488356614
+      "\u67EF\u57FA_Corgi_\u52D5\u756B_9": 1343356921
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
