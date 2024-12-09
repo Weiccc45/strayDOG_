@@ -106,7 +106,7 @@ public class TalkButton : MonoBehaviour
 
         if (isPlayerInTrigger)
         {
-            Button.transform.position = Camera.main.WorldToScreenPoint(transform.position + new Vector3(0, 1.5f, 0));
+            Button.transform.position = Camera.main.WorldToScreenPoint(transform.position + new Vector3(-5.3f, -2f, 0));
         }
     }
 
