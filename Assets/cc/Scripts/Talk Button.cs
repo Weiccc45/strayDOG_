@@ -11,7 +11,8 @@ public class TalkButton : MonoBehaviour
     public UnityEngine.UI.Text dialogueText; // 对话内容
     public UnityEngine.UI.Text speakerNameText; // 讲话人的名字
     public Button nextButton;
-    public List<Dialogue> dialogues; // 存储对话和讲者的名字
+    public List<Dialogue> dialoguesFirstTime; // 第一次对话内容
+    public List<Dialogue> dialoguesSecondTime; // 第二次对话内容
 
     public Transform cameraFocusPoint; // 用于放大的焦点位置
     public float cameraTransitionTime = 0.5f;
@@ -26,6 +27,7 @@ public class TalkButton : MonoBehaviour
     private Vector3 originalCameraPosition;
     private bool isTalking = false;
     private bool isWaitingForKeyPress = false; // 是否等待玩家按下按键
+    private bool hasTalkedBefore; // 记录是否已经对话过
 
     [System.Serializable]
     public class Dialogue
@@ -38,7 +40,7 @@ public class TalkButton : MonoBehaviour
     {
         if (Button == null || talkUI == null || dialogueText == null || speakerNameText == null || nextButton == null || cameraFocusPoint == null)
         {
-            UnityEngine.Debug.LogError("请在 Inspector 中设置所有必需的组件！");
+            Debug.LogError("请在 Inspector 中设置所有必需的组件！");
             return;
         }
 
@@ -50,6 +52,9 @@ public class TalkButton : MonoBehaviour
         talkUI.SetActive(false);
         nextButton.gameObject.SetActive(false);
         nextButton.onClick.AddListener(DisplayNextDialogue);
+
+        // 检查是否已与当前 NPC 交谈过
+        hasTalkedBefore = PlayerPrefs.GetInt(gameObject.name, 0) == 1;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -85,8 +90,7 @@ public class TalkButton : MonoBehaviour
             if (!talkUI.activeSelf)
             {
                 StartDialogue();
-                dialogueText.text = dialogues[currentDialogueIndex].content;
-                speakerNameText.text = dialogues[currentDialogueIndex].speakerName;
+                DisplayCurrentDialogue();
                 nextButton.gameObject.SetActive(true);
             }
         }
@@ -98,10 +102,9 @@ public class TalkButton : MonoBehaviour
             {
                 isWaitingForKeyPress = false;
                 currentDialogueIndex++;
-                if (currentDialogueIndex < dialogues.Count)
+                if (currentDialogueIndex < GetCurrentDialogueList().Count)
                 {
-                    dialogueText.text = dialogues[currentDialogueIndex].content;
-                    speakerNameText.text = dialogues[currentDialogueIndex].speakerName;
+                    DisplayCurrentDialogue();
                 }
                 else
                 {
@@ -122,25 +125,16 @@ public class TalkButton : MonoBehaviour
 
     private void DisplayNextDialogue()
     {
-        // 如果在等待按键，则不执行对话跳转
         if (isWaitingForKeyPress)
         {
-            UnityEngine.Debug.Log("等待玩家按下 WASD 键...");
+            Debug.Log("等待玩家按下 WASD 键...");
             return;
         }
 
         currentDialogueIndex++;
-        if (currentDialogueIndex < dialogues.Count)
+        if (currentDialogueIndex < GetCurrentDialogueList().Count)
         {
-            dialogueText.text = dialogues[currentDialogueIndex].content;
-            speakerNameText.text = dialogues[currentDialogueIndex].speakerName;
-
-            // 如果对话内容为特定文字，进入按键等待模式
-            if (dialogues[currentDialogueIndex].content == "Element 12")
-            {
-                isWaitingForKeyPress = true;
-                UnityEngine.Debug.Log("进入等待模式：按 W, A, S, 或 D 来继续。");
-            }
+            DisplayCurrentDialogue();
         }
         else
         {
@@ -155,8 +149,7 @@ public class TalkButton : MonoBehaviour
 
         Button.SetActive(false);
         talkUI.SetActive(true);
-        dialogueText.text = dialogues[currentDialogueIndex].content;
-        speakerNameText.text = dialogues[currentDialogueIndex].speakerName;
+        DisplayCurrentDialogue();
         nextButton.gameObject.SetActive(true);
 
         StartCoroutine(MoveCamera(cameraFocusPoint.position));
@@ -191,6 +184,14 @@ public class TalkButton : MonoBehaviour
         {
             defaultCamera.Priority = 10;
         }
+
+        // 保存 NPC 对话状态
+        if (!hasTalkedBefore)
+        {
+            PlayerPrefs.SetInt(gameObject.name, 1);
+            PlayerPrefs.Save();
+            hasTalkedBefore = true;
+        }
     }
 
     private void ResetDialogue()
@@ -212,5 +213,17 @@ public class TalkButton : MonoBehaviour
 
         mainCamera.transform.position = targetPosition;
     }
-    
+
+    private List<Dialogue> GetCurrentDialogueList()
+    {
+        return hasTalkedBefore ? dialoguesSecondTime : dialoguesFirstTime;
+    }
+
+    private void DisplayCurrentDialogue()
+    {
+        List<Dialogue> currentDialogueList = GetCurrentDialogueList();
+        Dialogue currentDialogue = currentDialogueList[currentDialogueIndex];
+        dialogueText.text = currentDialogue.content;
+        speakerNameText.text = currentDialogue.speakerName;
+    }
 }

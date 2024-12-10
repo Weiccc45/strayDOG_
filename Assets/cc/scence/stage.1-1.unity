@@ -2420,23 +2420,14 @@ MonoBehaviour:
   dialogueText: {fileID: 1746385295}
   speakerNameText: {fileID: 1822828308}
   nextButton: {fileID: 1114685409}
-  dialogues:
-  - speakerName: 
-    content: 
-  - speakerName: 
-    content: 
-  - speakerName: 
-    content: 
-  - speakerName: 
-    content: 
-  - speakerName: 
-    content: 
-  - speakerName: 
-    content: 
-  - speakerName: 
-    content: 
-  - speakerName: 
-    content: 
+  dialoguesFirstTime:
+  - speakerName: "\u8CB4\u8CD3"
+    content: "\u6C6A!"
+  - speakerName: "\u7C73\u83D3"
+    content: "\u6C6A!"
+  dialoguesSecondTime:
+  - speakerName: "\u8CB4\u8CD3"
+    content: "\u4E0D\u8981\u4F86\u7169\u6211!"
   cameraFocusPoint: {fileID: 978074967}
   cameraTransitionTime: 0.5
   talkCamera: {fileID: 788637246}
@@ -3834,35 +3825,8 @@ MonoBehaviour:
   dialogueText: {fileID: 878643049}
   speakerNameText: {fileID: 1838781549}
   nextButton: {fileID: 811179496}
-  dialogues:
-  - speakerName: "\u83D3\u83D3"
-    content: "\u6C6A\uFF01"
-  - speakerName: "\u7C73\u514B\u65AF"
-    content: "\u6C6A\uFF01"
-  - speakerName: "\u83D3\u83D3"
-    content: "\u4F60\u5728\u505A\u4EC0\u9EBC\uFF1F"
-  - speakerName: "\u7C73\u514B\u65AF"
-    content: "\u6211\u627E\u4E0D\u5230\u6211\u7684\u7403\u7403......"
-  - speakerName: "\u7C73\u514B\u65AF"
-    content: "\u627E\u4E0D\u5230\u7684\u8A71......\u7238\u7238\u6703\u751F\u6C23\u7684......"
-  - speakerName: "\u83D3\u83D3"
-    content: "\u5225\u7DCA\u5F35\uFF0C\u611F\u89BA\u4F60\u6574\u500B\u72D7\u90FD\u5728\u6296\u4E86\u3002"
-  - speakerName: "\u83D3\u83D3"
-    content: "\u8981\u4E0D\u8981\u6211\u5E6B\u4F60\u627E\uFF1F"
-  - speakerName: "\u7C73\u514B\u65AF"
-    content: "\u4E0D\u7528\uFF0C\u5982\u679C\u771F\u7684\u4E0D\u898B\u7684\u8A71......"
-  - speakerName: "\u7C73\u514B\u65AF"
-    content: "\u5ABD\u5ABD\u61C9\u8A72\u6703\u518D\u8CB7\u4E00\u500B\u5168\u65B0\u7684\u7D66\u6211\uFF01"
-  - speakerName: "\u7C73\u514B\u65AF"
-    content: "\u592A\u597D\u5566\uFF01\u65B0\u7684\u7403\u7403\uFF01"
-  - speakerName: "\u83D3\u83D3"
-    content: "\u554A\uFF0C\u4F60\u7684\u7403\u597D\u50CF\u5361\u5728\u4F60\u7684\u5C3E\u5DF4\u4E0A\u3002"
-  - speakerName: "\u7C73\u514B\u65AF"
-    content: "\u4EC0\u9EBC\uFF1F"
-  - speakerName: "\u7C73\u514B\u65AF"
-    content: "\u5594\u55DA......\u6C92\u6709\u65B0\u7684\u7403\u7403\u4E86......"
-  - speakerName: "\u83D3\u83D3"
-    content: "\u62B1\uFF0C\u62B1\u6B49\uFF1F"
+  dialoguesFirstTime: []
+  dialoguesSecondTime: []
   cameraFocusPoint: {fileID: 978074967}
   cameraTransitionTime: 0.5
   talkCamera: {fileID: 788637246}
@@ -4164,17 +4128,8 @@ MonoBehaviour:
   dialogueText: {fileID: 1013684002}
   speakerNameText: {fileID: 1769140013}
   nextButton: {fileID: 636270889}
-  dialogues:
-  - speakerName: "\u83D3\u83D3"
-    content: "\u6C6A\uFF01"
-  - speakerName: "\u67EF\u57FA"
-    content: "\u6C6A\uFF5E\uFF01"
-  - speakerName: "\u67EF\u57FA"
-    content: "\u5929\u6C23\u66FE\u597D\uFF5E\u6211\u6700\u611B\u4F86\u66FE\u88E1\u4E86\uFF5E"
-  - speakerName: "\u83D3\u83D3"
-    content: "\u6C23\u6EAB\u4E5F\u5F88\u8212\u670D\uFF0C\u771F\u7684\u5F88\u68D2\u5462\uFF01"
-  - speakerName: "\u67EF\u57FA"
-    content: "\u8C6A\u559C\u6B61\u51FA\u4F86\u73A9\uFF0C\u7AA9\u8981\u6BCF\u5929\u51FA\u4F86\u73A9\uFF5E"
+  dialoguesFirstTime: []
+  dialoguesSecondTime: []
   cameraFocusPoint: {fileID: 978074967}
   cameraTransitionTime: 0.5
   talkCamera: {fileID: 788637246}
@@ -5837,25 +5792,8 @@ MonoBehaviour:
   dialogueText: {fileID: 101300435}
   speakerNameText: {fileID: 737678199}
   nextButton: {fileID: 1953319089}
-  dialogues:
-  - speakerName: 
-    content: 
-  - speakerName: 
-    content: 
-  - speakerName: 
-    content: 
-  - speakerName: 
-    content: 
-  - speakerName: 
-    content: 
-  - speakerName: 
-    content: 
-  - speakerName: 
-    content: 
-  - speakerName: 
-    content: 
-  - speakerName: 
-    content: 
+  dialoguesFirstTime: []
+  dialoguesSecondTime: []
   cameraFocusPoint: {fileID: 978074967}
   cameraTransitionTime: 0.5
   talkCamera: {fileID: 788637246}
@@ -9466,35 +9404,8 @@ MonoBehaviour:
   dialogueText: {fileID: 1945487426}
   speakerNameText: {fileID: 1607141081}
   nextButton: {fileID: 857210512}
-  dialogues:
-  - speakerName: 
-    content: 
-  - speakerName: 
-    content: 
-  - speakerName: 
-    content: 
-  - speakerName: 
-    content: 
-  - speakerName: 
-    content: 
-  - speakerName: 
-    content: 
-  - speakerName: 
-    content: 
-  - speakerName: 
-    content: 
-  - speakerName: 
-    content: 
-  - speakerName: 
-    content: 
-  - speakerName: 
-    content: 
-  - speakerName: 
-    content: 
-  - speakerName: 
-    content: 
-  - speakerName: 
-    content: 
+  dialoguesFirstTime: []
+  dialoguesSecondTime: []
   cameraFocusPoint: {fileID: 978074967}
   cameraTransitionTime: 0.5
   talkCamera: {fileID: 788637246}
@@ -10182,33 +10093,8 @@ MonoBehaviour:
   dialogueText: {fileID: 1556186672}
   speakerNameText: {fileID: 1366776379}
   nextButton: {fileID: 2069850568}
-  dialogues:
-  - speakerName: 
-    content: 
-  - speakerName: 
-    content: 
-  - speakerName: 
-    content: 
-  - speakerName: 
-    content: 
-  - speakerName: 
-    content: 
-  - speakerName: 
-    content: 
-  - speakerName: 
-    content: 
-  - speakerName: 
-    content: 
-  - speakerName: 
-    content: 
-  - speakerName: 
-    content: 
-  - speakerName: 
-    content: 
-  - speakerName: 
-    content: 
-  - speakerName: 
-    content: 
+  dialoguesFirstTime: []
+  dialoguesSecondTime: []
   cameraFocusPoint: {fileID: 978074967}
   cameraTransitionTime: 0.5
   talkCamera: {fileID: 788637246}
