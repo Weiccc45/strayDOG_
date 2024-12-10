@@ -10149,8 +10149,32 @@ MonoBehaviour:
   nextButton: {fileID: 2069850568}
   dialoguesFirstTime: []
   dialoguesSecondTime:
-  - speakerName: 
-    content: 
+  - speakerName: "\u7C73\u83D3"
+    content: "\u6C6A\uFF01"
+  - speakerName: "\u5FB7\u7267"
+    content: ......
+  - speakerName: "\u7C73\u83D3"
+    content: ......
+  - speakerName: "\u5FB7\u7267"
+    content: ......
+  - speakerName: "\u7C73\u83D3"
+    content: "\u4F60\u5728\u7B49\u4E3B\u4EBA\u55CE\uFF1F"
+  - speakerName: "\u5FB7\u7267"
+    content: "\u5C0D\uFF0C\u6211\u5728\u7B49\u4ED6\u56DE\u4F86\u3002\t"
+  - speakerName: "\u7C73\u83D3"
+    content: "\u53EF\u80FD\u9084\u5F97\u7B49\u4E00\u9663\u5B50\uFF0C\u6211\u7238\u7238\u53BB\u505C\u8ECA\u4E5F\u9084\u6C92\u56DE\u4F86\u3002\t\t"
+  - speakerName: "\u5FB7\u7267"
+    content: "\u4E0D\uFF0C\u6211\u5ABD\u5728\u524D\u9762\u6C99\u5751\u5340\u8DDF\u5225\u7684\u72D7\u73A9\u5462\u3002\t\t"
+  - speakerName: "\u7C73\u83D3"
+    content: "\u554A\uFF1F\u9019\u6A23\u554A\u3002"
+  - speakerName: "\u7C73\u83D3"
+    content: "\u4F60\u600E\u9EBC\u4E0D\u4E5F\u53BB\u73A9\u73A9\uFF1F\t"
+  - speakerName: "\u5FB7\u7267"
+    content: "\u6211\u6015\u4ED6\u8D70\u4E1F\uFF0C\u6C92\u4E8B\u7684\u3002\t"
+  - speakerName: "\u5FB7\u7267"
+    content: "\u4ED6\u73A9\u7D2F\u7684\u8A71\u5C31\u6703\u81EA\u5DF1\u56DE\u4F86\u4E86\u3002\t"
+  - speakerName: "\u7C73\u83D3"
+    content: "......\u597D\u5427\u3002"
   cameraFocusPoint: {fileID: 978074967}
   cameraTransitionTime: 0.5
   talkCamera: {fileID: 788637246}
