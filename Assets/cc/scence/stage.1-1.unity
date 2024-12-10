@@ -2425,9 +2425,7 @@ MonoBehaviour:
     content: "\u6C6A!"
   - speakerName: "\u7C73\u83D3"
     content: "\u6C6A!"
-  dialoguesSecondTime:
-  - speakerName: "\u8CB4\u8CD3"
-    content: "\u4E0D\u8981\u4F86\u7169\u6211!"
+  dialoguesSecondTime: []
   cameraFocusPoint: {fileID: 978074967}
   cameraTransitionTime: 0.5
   talkCamera: {fileID: 788637246}
@@ -3802,7 +3800,7 @@ Transform:
   m_GameObject: {fileID: 557629069}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 34.746796, y: 0.53541964, z: 0.11417215}
+  m_LocalPosition: {x: 38.18, y: 0.53541964, z: 0.11417215}
   m_LocalScale: {x: 0.6607887, y: 0.6607887, z: 0.6607887}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3825,34 +3823,44 @@ MonoBehaviour:
   dialogueText: {fileID: 878643049}
   speakerNameText: {fileID: 1838781549}
   nextButton: {fileID: 811179496}
-  dialoguesFirstTime: []
-  dialoguesSecondTime:
-  - speakerName: "\u7C73\u514B\u65AF"
-    content: "\u6C6A\uFF01"
+  dialoguesFirstTime:
   - speakerName: "\u7C73\u83D3"
+    content: "\u6C6A\uFF01"
+  - speakerName: "\u7C73\u514B\u65AF"
     content: "\u6C6A\uFF01"
   - speakerName: "\u7C73\u83D3"
     content: "\u4F60\u5728\u505A\u4EC0\u9EBC\uFF1F"
   - speakerName: "\u7C73\u514B\u65AF"
-    content: "\u6211\u627E\u4E0D\u5230\u6211\u7684\u7403\u7403......\t"
+    content: "\u6211\u627E\u4E0D\u5230\u6211\u7684\u7403\u7403......"
   - speakerName: "\u7C73\u514B\u65AF"
-    content: "\u627E\u4E0D\u5230\u7684\u8A71......\u7238\u7238\u6703\u751F\u6C23\u7684......\t"
+    content: "\u627E\u4E0D\u5230\u7684\u8A71......\u7238\u7238\u6703\u751F\u6C23\u7684......"
   - speakerName: "\u7C73\u83D3"
-    content: "\u5225\u7DCA\u5F35\uFF0C\u611F\u89BA\u4F60\u6574\u500B\u72D7\u90FD\u5728\u6296\u4E86\u3002\t"
+    content: "\u5225\u7DCA\u5F35\uFF0C\u611F\u89BA\u4F60\u6574\u500B\u72D7\u90FD\u5728\u6296\u4E86\u3002"
   - speakerName: "\u7C73\u83D3"
-    content: "\u8981\u4E0D\u8981\u6211\u5E6B\u4F60\u627E\uFF1F\t"
+    content: "\u8981\u4E0D\u8981\u6211\u5E6B\u4F60\u627E\uFF1F"
   - speakerName: "\u7C73\u514B\u65AF"
-    content: "\u4E0D\u7528\uFF0C\u5982\u679C\u771F\u7684\u4E0D\u898B\u7684\u8A71......\t"
+    content: "\u4E0D\u7528\uFF0C\u5982\u679C\u771F\u7684\u4E0D\u898B\u7684\u8A71......"
   - speakerName: "\u7C73\u514B\u65AF"
-    content: "\u5ABD\u5ABD\u61C9\u8A72\u6703\u518D\u8CB7\u4E00\u500B\u5168\u65B0\u7684\u7D66\u6211\uFF01\t"
+    content: "\u5ABD\u5ABD\u61C9\u8A72\u6703\u518D\u8CB7\u4E00\u500B\u5168\u65B0\u7684\u7D66\u6211\uFF01"
   - speakerName: "\u7C73\u514B\u65AF"
-    content: "\u592A\u597D\u5566\uFF01\u65B0\u7684\u7403\u7403\uFF01\t"
+    content: "\u592A\u597D\u5566\uFF01\u65B0\u7684\u7403\u7403\uFF01"
   - speakerName: "\u7C73\u83D3"
-    content: "\u554A\uFF0C\u4F60\u7684\u7403\u597D\u50CF\u5361\u5728\u4F60\u7684\u5C3E\u5DF4\u4E0A\u3002\t"
+    content: "\u554A\uFF0C\u4F60\u7684\u7403\u597D\u50CF\u5361\u5728\u4F60\u7684\u5C3E\u5DF4\u4E0A\u3002"
   - speakerName: "\u7C73\u514B\u65AF"
-    content: "\u5594\u55DA......\u6C92\u6709\u65B0\u7684\u7403\u7403\u4E86......\t"
+    content: "\u4EC0\u9EBC\uFF1F"
+  - speakerName: "\u7C73\u514B\u65AF"
+    content: "\u5594\u55DA......\u6C92\u6709\u65B0\u7684\u7403\u7403\u4E86......"
   - speakerName: "\u7C73\u83D3"
     content: "\u62B1\uFF0C\u62B1\u6B49\uFF1F"
+  dialoguesSecondTime:
+  - speakerName: "\u7C73\u514B\u65AF"
+    content: "\u597D\u60F3\u8981\u8DDF\u5ABD\u5ABD\u4E00\u8D77\u65B0\u7403\u7403......"
+  - speakerName: "\u7C73\u83D3"
+    content: "\u5225\u96E3\u904E\u4E86\uFF0C\u65E2\u7136\u627E\u5230\u7403\u4E86\uFF0C\u4F60\u7238\u7238\u5C31\u4E0D\u6703\u751F\u6C23\u4E86\u5427\uFF1F"
+  - speakerName: "\u7C73\u514B\u65AF"
+    content: "\u4F46\u662F\u820A\u7684\u7403\u7403\u5DF2\u7D93\u4E0D\u597D\u54AC\u4E86......"
+  - speakerName: "\u7C73\u83D3"
+    content: "\u597D\u5427......"
   cameraFocusPoint: {fileID: 978074967}
   cameraTransitionTime: 0.5
   talkCamera: {fileID: 788637246}
@@ -3916,7 +3924,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.448251, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -3927,7 +3935,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 7.001709, y: 6.6}
+  m_Size: {x: 12.739391, y: 6.6}
   m_EdgeRadius: 0
 --- !u!95 &557629074
 Animator:
