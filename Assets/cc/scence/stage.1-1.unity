@@ -2425,7 +2425,23 @@ MonoBehaviour:
     content: "\u6C6A!"
   - speakerName: "\u7C73\u83D3"
     content: "\u6C6A!"
-  dialoguesSecondTime: []
+  dialoguesSecondTime:
+  - speakerName: "\u7C73\u83D3"
+    content: "\u6C6A!"
+  - speakerName: "\u68D5\u8272\u8CB4\u8CD3\u72AC"
+    content: "\u6C6A\u6C6A\u6C6A\uFF01\u6C6A\uFF01"
+  - speakerName: "\u68D5\u8272\u8CB4\u8CD3\u72AC"
+    content: "\u6C6A\u6C6A\u6C6A\u6C6A\u6C6A\uFF01"
+  - speakerName: "\u7C73\u83D3"
+    content: "\u6211\u53EA\u662F\u4F86\u6643\u6643\uFF0C\u4F60\u600E\u9EBC\u4E86\uFF1F"
+  - speakerName: "\u68D5\u8272\u8CB4\u8CD3\u72AC"
+    content: "\u5225\u60F3\u78B0\u6211\u7684\u6BDB\uFF01\u5225\u60F3\uFF01"
+  - speakerName: "\u68D5\u8272\u8CB4\u8CD3\u72AC"
+    content: "\u8001\u5B50\u624D\u525B\u525B\u53BB\u7F8E\u5BB9\u9662\u526A\u5B8C\uFF01\u5225\u60F3\u8B93\u6211\u518D\u53BB\u4E00\u6B21\uFF01"
+  - speakerName: "\u7C73\u83D3"
+    content: "\u6C6A\u6C6A\u6C6A\u6C6A\u6C6A\u6C6A\uFF01"
+  - speakerName: "\u68D5\u8272\u8CB4\u8CD3\u72AC"
+    content: "\uFF08\u6211\u6839\u672C\u9084\u6C92\u9760\u8FD1......\uFF09"
   cameraFocusPoint: {fileID: 978074967}
   cameraTransitionTime: 0.5
   talkCamera: {fileID: 788637246}
@@ -3853,14 +3869,34 @@ MonoBehaviour:
   - speakerName: "\u7C73\u83D3"
     content: "\u62B1\uFF0C\u62B1\u6B49\uFF1F"
   dialoguesSecondTime:
-  - speakerName: "\u7C73\u514B\u65AF"
-    content: "\u597D\u60F3\u8981\u8DDF\u5ABD\u5ABD\u4E00\u8D77\u65B0\u7403\u7403......"
   - speakerName: "\u7C73\u83D3"
-    content: "\u5225\u96E3\u904E\u4E86\uFF0C\u65E2\u7136\u627E\u5230\u7403\u4E86\uFF0C\u4F60\u7238\u7238\u5C31\u4E0D\u6703\u751F\u6C23\u4E86\u5427\uFF1F"
+    content: "\u6C6A\uFF01"
   - speakerName: "\u7C73\u514B\u65AF"
-    content: "\u4F46\u662F\u820A\u7684\u7403\u7403\u5DF2\u7D93\u4E0D\u597D\u54AC\u4E86......"
+    content: "\u6C6A\uFF01"
   - speakerName: "\u7C73\u83D3"
-    content: "\u597D\u5427......"
+    content: "\u4F60\u5728\u505A\u4EC0\u9EBC\uFF1F"
+  - speakerName: "\u7C73\u514B\u65AF"
+    content: "\u6211\u627E\u4E0D\u5230\u6211\u7684\u7403\u7403......"
+  - speakerName: "\u7C73\u514B\u65AF"
+    content: "\u627E\u4E0D\u5230\u7684\u8A71......\u7238\u7238\u6703\u751F\u6C23\u7684......"
+  - speakerName: "\u7C73\u83D3"
+    content: "\u5225\u7DCA\u5F35\uFF0C\u611F\u89BA\u4F60\u6574\u500B\u72D7\u90FD\u5728\u6296\u4E86\u3002"
+  - speakerName: "\u7C73\u83D3"
+    content: "\u8981\u4E0D\u8981\u6211\u5E6B\u4F60\u627E\uFF1F"
+  - speakerName: "\u7C73\u514B\u65AF"
+    content: "\u4E0D\u7528\uFF0C\u5982\u679C\u771F\u7684\u4E0D\u898B\u7684\u8A71......"
+  - speakerName: "\u7C73\u514B\u65AF"
+    content: "\u5ABD\u5ABD\u61C9\u8A72\u6703\u518D\u8CB7\u4E00\u500B\u5168\u65B0\u7684\u7D66\u6211\uFF01"
+  - speakerName: "\u7C73\u514B\u65AF"
+    content: "\u592A\u597D\u5566\uFF01\u65B0\u7684\u7403\u7403\uFF01"
+  - speakerName: "\u7C73\u83D3"
+    content: "\u554A\uFF0C\u4F60\u7684\u7403\u597D\u50CF\u5361\u5728\u4F60\u7684\u5C3E\u5DF4\u4E0A\u3002"
+  - speakerName: "\u7C73\u514B\u65AF"
+    content: "\u4EC0\u9EBC\uFF1F"
+  - speakerName: "\u7C73\u514B\u65AF"
+    content: "\u5594\u55DA......\u6C92\u6709\u65B0\u7684\u7403\u7403\u4E86......"
+  - speakerName: "\u7C73\u83D3"
+    content: "\u62B1\uFF0C\u62B1\u6B49\uFF1F"
   cameraFocusPoint: {fileID: 978074967}
   cameraTransitionTime: 0.5
   talkCamera: {fileID: 788637246}
@@ -9466,8 +9502,70 @@ MonoBehaviour:
   dialogueText: {fileID: 1945487426}
   speakerNameText: {fileID: 1607141081}
   nextButton: {fileID: 857210512}
-  dialoguesFirstTime: []
-  dialoguesSecondTime: []
+  dialoguesFirstTime:
+  - speakerName: "\u6CD5\u9B25"
+    content: "\u4F60\u8AAA\u5565"
+  dialoguesSecondTime:
+  - speakerName: "\u6CD5\u9B25"
+    content: "\u6C6A\uFF5E"
+  - speakerName: "\u7C73\u83D3"
+    content: "\u6C6A\uFF5E"
+  - speakerName: "\u7C73\u83D3"
+    content: "\u4F60\u600E\u9EBC\u6C92\u8DDF\u4F60\u7684\u4E3B\u4EBA\u5728\u4E00\u8D77\uFF1F"
+  - speakerName: 
+    content: 
+  - speakerName: "\u6CD5\u9B25"
+    content: "\u5225\u64D4\u5FC3\uFF5E\u4ED6\u5148\u53BB\u73A9\u6ED1\u677F\u4E86\uFF5E\u4ED6\u6BCF\u6B21\u4F86\u9019\u88E1\u90FD\u9019\u6A23\uFF5E"
+  - speakerName: "\u7C73\u83D3"
+    content: "\u4F60\u5E38\u5E38\u4F86\u9019\u88E1\u55CE\uFF1F"
+  - speakerName: "\u6CD5\u9B25"
+    content: "\u5C0D\u554A\uFF5E\u6211\u5011\u5169\u500B\u7684\u5BB6\u5C31\u5728\u9644\u8FD1\u800C\u5DF2\uFF5E\u6240\u4EE5\u8DDF\u5E38\u4F86\u7684\u5927\u5BB6\u4E5F\u662F\u719F\u9762\u5B54\u5566\uFF5E"
+  - speakerName: "\u6CD5\u9B25"
+    content: "\u8A71\u8AAA\u4F60\uFF0C\u662F\u7B2C\u4E00\u6B21\u4F86\u9019\u908A\u5427\uFF1F"
+  - speakerName: "\u7C73\u83D3"
+    content: "\u662F\u554A\uFF0C\u4EE5\u524D\u6211\u7684\u7238\u7238\u90FD\u53EA\u6703\u5E36\u6211\u53BB\u5BB6\u88E1\u9644\u8FD1\u6563\u6B65\u800C\u5DF2\u3002"
+  - speakerName: "\u7C73\u83D3"
+    content: "\u5728\u8857\u4E0A\u4E5F\u53EA\u80FD\u5957\u8457\u7E69\u5B50\uFF0C\u6211\u7B2C\u4E00\u6B21\u9019\u9EBC\u81EA\u7531\u5730\u8DD1\u4F86\u8DD1\u53BB\u3002"
+  - speakerName: "\u6CD5\u9B25"
+    content: "\u96E3\u602A\u4F60\u90A3\u9EBC\u5FD9\u8457\u8DD1\u4F86\u8DD1\u53BB\uFF0C\u539F\u4F86\u662F\u7B2C\u4E00\u6B21\u8E29\u5927\u8349\u539F\u554A\uFF5E"
+  - speakerName: "\u6CD5\u9B25"
+    content: "\u4F60\u8981\u5B78\u5B78\u6211\uFF5E\u653E\u9B06\u5FC3\u60C5\u6F2B\u6B65\u5566\uFF5E"
+  - speakerName: "\u6CD5\u9B25"
+    content: "\u5C31\u9019\u6A23\u60A0\u54C9\u5730\u6162\u6162\u8D70\u8D70\u770B\uFF5E"
+  - speakerName: '  '
+    content: "(\u6309\u4F4F \uFF37\uFF21\uFF33\uFF24 \u4F86\u56DB\u8655\u8D70\u52D5......)"
+  - speakerName: "\u6CD5\u9B25"
+    content: "\u770B\u5427\uFF5E\u5C31\u9019\u6A23\u60A0\u60A0\u7684\u8D70\u5C31\u5C0D\u4E86\uFF5E"
+  - speakerName: "\u7C73\u83D3"
+    content: "\u5176\u5BE6\u4F60\u4E0D\u7528\u544A\u8A34\u6211\u600E\u9EBC\u8D70\u8DEF\u5566......\u6211\u525B\u525B\u5C31\u662F\u81EA\u5DF1\u8D70\u904E\u4F86\u7684......"
+  - speakerName: "\u6CD5\u9B25"
+    content: "\u597D\u5566\uFF5E\u512A\u9592\u7684\u6642\u5149\u7D50\u675F\u4E86\uFF0C\u6211\u5011\u4F86\u73A9\u5427\uFF5E"
+  - speakerName: "\u7C73\u83D3"
+    content: "\u554A\uFF0C\u4F60\u5E79\u561B\u54AC\u6211\uFF1F"
+  - speakerName: "\u6CD5\u9B25"
+    content: "\u4F60\u4E0D\u60F3\u4E00\u8D77\u53BB\u73A9\u55CE\uFF5E\u6211\u5011\u53BB\u627E\u5176\u4ED6\u50A2\u5925\u73A9\u554A\uFF5E"
+  - speakerName: "\u7C73\u83D3"
+    content: "\u4F60\u662F\u5E7E\u6B72\u4E86\uFF1F\u9084\u628A\u54AC\u4EBA\u7576\u6210\u904A\u6232......"
+  - speakerName: "\u6CD5\u9B25"
+    content: "\u771F\u662F\u7684\uFF5E\u4F60\u662F\u5728\u8DDF\u81EA\u5DF1\u7684\u672C\u6027\u53CD\u6297\uFF5E"
+  - speakerName: "\u6CD5\u9B25"
+    content: "\u4F86\u561B\uFF5E\u904B\u6C23\u597D\u7684\u8A71\uFF0C\u6211\u5011\u9084\u80FD\u6316\u5230\u5225\u4EBA\u5FD8\u5728\u516C\u5712\u88E1\u7684\u76AE\u7403\u5594\uFF5E"
+  - speakerName: "\u7C73\u83D3"
+    content: "\u55EF......"
+  - speakerName: '   '
+    content: "(\u6309\u4E0B\u6ED1\u9F20\u5DE6\u9375\uFF0C\u4F7F\u7528\uFF02\u54AC\u54AC\uFF02\u548C\uFF02\u4E92\u52D5\uFF02......)"
+  - speakerName: "\u6CD5\u9B25"
+    content: "\u554A\uFF5E\u54EA\u6709\u72D7\u54AC\u72D7\u9019\u9EBC\u5927\u529B\u7684\uFF5E"
+  - speakerName: "\u7C73\u83D3"
+    content: "\u9019\u500B\u561B\uFF0C\u4F60\u4E0D\u662F\u8AAA\u672C\u6027\u55CE......"
+  - speakerName: "\u7C73\u83D3"
+    content: "\u5728\u5BB6\u88E1\u6211\u53EF\u4E0D\u80FD\u4E82\u54AC\u6211\u7238\u7238\uFF0C\u4E00\u4E0D\u5C0F\u5FC3\u5C31\u5FD8\u8A18\u529B\u9053\u4E86......"
+  - speakerName: "\u6CD5\u9B25"
+    content: "\u5404\u4F4D\u554A\uFF5E\u8DDF\u65B0\u670B\u53CB\u4E00\u8D77\u4F86\u73A9\u5427\uFF5E"
+  - speakerName: "\u6CD5\u9B25"
+    content: "\u54A6\uFF0C\u600E\u9EBC\u8B8A\u6DBC\u4E86\uFF5E\uFF1F"
+  - speakerName: "\u7C73\u83D3"
+    content: "\u554A\uFF1F"
   cameraFocusPoint: {fileID: 978074967}
   cameraTransitionTime: 0.5
   talkCamera: {fileID: 788637246}
@@ -12714,7 +12812,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 330, y: 160}
+  m_AnchoredPosition: {x: 323, y: 160}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2086119426

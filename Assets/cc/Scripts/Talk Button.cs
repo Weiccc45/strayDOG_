@@ -26,8 +26,7 @@ public class TalkButton : MonoBehaviour
     private Camera mainCamera;
     private Vector3 originalCameraPosition;
     private bool isTalking = false;
-    private bool isWaitingForKeyPress = false; // 是否等待玩家按下按键
-    private bool hasTalkedBefore; // 记录是否已经对话过
+    private bool hasTalkedBefore = false;
 
     [System.Serializable]
     public class Dialogue
@@ -53,8 +52,10 @@ public class TalkButton : MonoBehaviour
         nextButton.gameObject.SetActive(false);
         nextButton.onClick.AddListener(DisplayNextDialogue);
 
-        // 检查是否已与当前 NPC 交谈过
+        // 默认值为 0（未对话）
         hasTalkedBefore = PlayerPrefs.GetInt(gameObject.name, 0) == 1;
+
+        Debug.Log($"NPC {gameObject.name} 初始对话状态：{(hasTalkedBefore ? "已对话过" : "未对话")}");
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -97,21 +98,7 @@ public class TalkButton : MonoBehaviour
 
         if (isTalking)
         {
-            if (isWaitingForKeyPress &&
-                (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D)))
-            {
-                isWaitingForKeyPress = false;
-                currentDialogueIndex++;
-                if (currentDialogueIndex < GetCurrentDialogueList().Count)
-                {
-                    DisplayCurrentDialogue();
-                }
-                else
-                {
-                    EndDialogue();
-                }
-            }
-            else if (!isWaitingForKeyPress && Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.Space))
             {
                 DisplayNextDialogue();
             }
@@ -125,20 +112,26 @@ public class TalkButton : MonoBehaviour
 
     private void DisplayNextDialogue()
     {
-        if (isWaitingForKeyPress)
-        {
-            Debug.Log("等待玩家按下 WASD 键...");
-            return;
-        }
-
         currentDialogueIndex++;
-        if (currentDialogueIndex < GetCurrentDialogueList().Count)
+        List<Dialogue> currentDialogueList = GetCurrentDialogueList();
+
+        if (currentDialogueIndex < currentDialogueList.Count)
         {
             DisplayCurrentDialogue();
         }
         else
         {
             EndDialogue();
+        }
+    }
+
+    private void DisplayCurrentDialogue()
+    {
+        List<Dialogue> currentDialogueList = GetCurrentDialogueList();
+        if (currentDialogueIndex < currentDialogueList.Count)
+        {
+            dialogueText.text = currentDialogueList[currentDialogueIndex].content;
+            speakerNameText.text = currentDialogueList[currentDialogueIndex].speakerName;
         }
     }
 
@@ -149,6 +142,7 @@ public class TalkButton : MonoBehaviour
 
         Button.SetActive(false);
         talkUI.SetActive(true);
+        currentDialogueIndex = 0; // 每次对话重新从头开始
         DisplayCurrentDialogue();
         nextButton.gameObject.SetActive(true);
 
@@ -162,6 +156,8 @@ public class TalkButton : MonoBehaviour
         {
             defaultCamera.Priority = 0;
         }
+
+        Debug.Log($"开始对话：当前对话为 {(hasTalkedBefore ? "第二次对话" : "第一次对话")}");
     }
 
     private void EndDialogue()
@@ -185,18 +181,34 @@ public class TalkButton : MonoBehaviour
             defaultCamera.Priority = 10;
         }
 
-        // 保存 NPC 对话状态
+        // 更新对话状态
         if (!hasTalkedBefore)
         {
             PlayerPrefs.SetInt(gameObject.name, 1);
             PlayerPrefs.Save();
             hasTalkedBefore = true;
+            Debug.Log($"NPC {gameObject.name} 对话状态更新为：已对话过");
         }
     }
 
     private void ResetDialogue()
     {
         currentDialogueIndex = 0;
+    }
+
+    private List<Dialogue> GetCurrentDialogueList()
+    {
+        if (!hasTalkedBefore && dialoguesFirstTime != null && dialoguesFirstTime.Count > 0)
+        {
+            return dialoguesFirstTime;
+        }
+        else if (hasTalkedBefore && dialoguesSecondTime != null && dialoguesSecondTime.Count > 0)
+        {
+            return dialoguesSecondTime;
+        }
+
+        Debug.LogError($"NPC {gameObject.name} 的对话内容未正确配置！");
+        return new List<Dialogue>();
     }
 
     private IEnumerator MoveCamera(Vector3 targetPosition)
@@ -212,18 +224,5 @@ public class TalkButton : MonoBehaviour
         }
 
         mainCamera.transform.position = targetPosition;
-    }
-
-    private List<Dialogue> GetCurrentDialogueList()
-    {
-        return hasTalkedBefore ? dialoguesSecondTime : dialoguesFirstTime;
-    }
-
-    private void DisplayCurrentDialogue()
-    {
-        List<Dialogue> currentDialogueList = GetCurrentDialogueList();
-        Dialogue currentDialogue = currentDialogueList[currentDialogueIndex];
-        dialogueText.text = currentDialogue.content;
-        speakerNameText.text = currentDialogue.speakerName;
     }
 }
